@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumark S 715/916/1217 | Foton Caminhões</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #ffffff;">
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); ">
+                    <img src="assets/logo_foton.png" alt="Foton Logo">
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="index.html#seminovos">Seminovos</a></li>
+                <li><a href="index.html#home">Serviços</a></li>
+                <li><a href="index.html#home">Peças e Acessórios</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+                <a href="#" class="btn-nav">WHATSAPP</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+        
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="index.html#seminovos">Seminovos</a></li>
+            <li><a href="index.html#home">Serviços</a></li>
+            <li><a href="index.html#home">Peças e Acessórios</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        
+        <div class="sidebar-buttons">
+            <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            <a href="#" class="btn-nav outline">WHATSAPP</a>
+        </div>
+    </aside>
+    <section class="product-showcase">
+        
+        <div class="showcase-top">
+            <h1 class="showcase-watermark">Aumark</h1>
+        </div>
+
+        <div class="showcase-image-container">
+            <img src="assets/modelo_2.webp" alt="Foton Aumark S 715" class="showcase-truck">
+        </div>
+
+        <div class="showcase-bottom">
+            <div class="showcase-categories">
+                
+            </div>
+            
+            <h2 class="showcase-main-title">Aumark S 715 / 916 / 1217</h2>
+            <div class="showcase-actions">
+                <a href="index.html?modelo=aumark-s-715#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="test-drive.html?modelo=aumark-s-715" class="btn-showcase outline">Agendar Test Drive</a>
+            </div>
+            <div class="showcase-badges">
+                <span class="badge-novo">Novo</span>
+                <span class="badge-tech">Tecnologia Cummins</span>
+            </div>
+        </div>
+
+    </section>
+    <section class="aumark-specs-section">
+        <div class="specs-container">
+            <div class="specs-content">
+                
+              <div class="spec-item">
+                    <span class="spec-number"><span class="counter" data-target="150">0</span> <span class="spec-unit">cv</span></span>
+                    <p class="spec-desc">Potência máxima com o robusto motor Cummins (a 2.900 rpm)</p>
+                </div>
+
+                <div class="spec-item">
+                    <span class="spec-number"><span class="counter" data-target="400">0</span> <span class="spec-unit">Nm</span></span>
+                    <p class="spec-desc">Torque máximo garantindo força em qualquer subida e carga (1.200 - 2.500 rpm)</p>
+                </div>
+
+                <div class="spec-item">
+                    <span class="spec-number"><span class="counter" data-target="7000">0</span> <span class="spec-unit">kg</span></span>
+                    <p class="spec-desc">Peso Bruto Total (PBT), ideal para versatilidade urbana e rodoviária</p>
+                </div>
+
+                
+            </div>
+
+            <div class="specs-image">
+                <img src="assets/modelo_2.webp" alt="Aumark S 715">
+            </div>
+        </div>
+    </section>
+<section class="gallery-section">
+        <h2 class="gallery-main-title">Incomparável por dentro e por fora.</h2>
+
+        <div class="gallery-layout">
+            <div class="gallery-viewer">
+                <div class="gallery-main-img">
+                    <img id="mainGalleryImg" src="assets/aumark_s_715_exterior_1.webp" alt="Aumark S Exterior">
+                </div>
+                
+                <div class="gallery-thumbnails" id="galleryThumbnails">
+                    <img src="assets/aumark_s_715_exterior_1.webp" class="thumb active" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_exterior_2.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_exterior_3.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_exterior_4.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    
+                    <img src="assets/aumark_s_715_interior_1.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_interior_2.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_interior_3.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/aumark_s_715_interior_4.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                </div>
+            </div>
+
+            <div class="gallery-sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-header">
+                        <h3>Perspectiva</h3>
+                        <span class="icon-minus"></span>
+                    </div>
+                    <div class="sidebar-options">
+                        <button class="sidebar-btn active" onclick="filterGallery('exterior', this)">Exterior</button>
+                        <button class="sidebar-btn" onclick="filterGallery('interior', this)">Interior</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="versions-section">
+        <h2 class="versions-main-title">Versões e Ficha Técnica</h2>
+
+        <!-- 🌟 NOVAS ABAS DE MODELOS -->
+        <div class="versions-tabs">
+            <div class="version-tab active" onclick="selectVersion('715', this)">
+                <img src="assets/modelo_2.webp" alt="Aumark S 715">
+                <span>AUMARK<br><strong>S 715</strong></span>
+            </div>
+            <div class="version-tab" onclick="selectVersion('916', this)">
+                <img src="assets/modelo_2.webp" alt="Aumark S 916">
+                <span>AUMARK<br><strong>S 916</strong></span>
+            </div>
+            <div class="version-tab" onclick="selectVersion('1217', this)">
+                <img src="assets/modelo_2.webp" alt="Aumark S 1217">
+                <span>AUMARK<br><strong>S 1217</strong></span>
+            </div>
+        </div>
+
+        <!-- 1. ACORDEÃO AUMARK S 715 -->
+        <!-- 1. ACORDEÃO AUMARK S 715 -->
+        <div class="specs-accordion" id="specs-715">
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Motor <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Fabricante/Modelo</span> <strong>Cummins F2.5 (Proconve P8)</strong></li>
+                            <li><span>Potência Líq. máxima - cv / rpm (*)</span> <strong>150 cv a 2.900 rpm</strong></li>
+                            <li><span>Torque máximo - Nm / rpm (*)</span> <strong>400 Nm a 1.200-2.500 rpm</strong></li>
+                            <li><span>Tipo / Nº de cilindros</span> <strong>Diesel - 4 cilindros em linha</strong></li>
+                            <li><span>Sistema de injeção</span> <strong>Injeção Eletrônica - Common Rail</strong></li>
+                            <li><span>Cilindrada total (cm³)</span> <strong>2.498 cm³</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Transmissão <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Fabricante / Modelo</span> <strong>ZF / 5S408</strong></li>
+                            <li><span>Acionamento</span> <strong>Manual / Mecânico</strong></li>
+                            <li><span>Quantidade de marchas</span> <strong>5 (cinco) marchas à frente e 1 (uma) marcha à ré</strong></li>
+                            <li><span>Relação de transmissão</span> <strong>1ª - 5,762:1 / 2ª - 2,922:1 / 3ª - 1,638:1 / 4ª - 1,000:1 / 5ª - 0,782:1 / Ré - 5,149:1</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Freios <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Freio de serviço</span> <strong>A ar, tambor nas rodas dianteiras e tambor nas traseiras com ABS + ASR + ESC</strong></li>
+                            <li><span>Freio de estacionamento</span> <strong>A ar com molas acumuladoras</strong></li>
+                            <li><span>Freio Motor</span> <strong>EAT</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Embreagem <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Acionamento</span> <strong>Hidráulico servo assistido</strong></li>
+                            <li><span>Tipo</span> <strong>Disco simples a seco, com platô acionado por mola diafragma</strong></li>
+                            <li><span>Diâmetro do disco (mm)</span> <strong>325 mm</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Eixos <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Capacidade do Eixo Traseiro</span> <strong>4.500 kg</strong></li>
+                            <li><span>Relação de redução do Eixo Traseiro</span> <strong>5.375</strong></li>
+                            <li><span>Capacidade do Eixo Dianteiro</span> <strong>2.500 kg (Viga perfil “I”)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Sistema Elétrico <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Tensão nominal</span> <strong>24 V</strong></li>
+                            <li><span>Bateria (Unidade/Ah/V)</span> <strong>2 x (100 Ah / 12V / 750 A)</strong></li>
+                            <li><span>Alternador (A/V)</span> <strong>80A / 28V</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Suspensão <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Suspensão Traseira (Molas)</span> <strong>Feixe de molas parabólicas (5+2 lâminas)</strong></li>
+                            <li><span>Amortecedores Traseiros</span> <strong>Telescópicos hidráulicos de dupla ação com barra estabilizadora</strong></li>
+                            <li><span>Suspensão Dianteira (Molas)</span> <strong>Feixe de molas parabólicas (3 lâminas)</strong></li>
+                            <li><span>Amortecedores Dianteiros</span> <strong>Telescópicos hidráulicos de dupla ação com barra estabilizadora</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Rodas e Pneus <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Material da roda</span> <strong>Aço</strong></li>
+                            <li><span>Dimensões (Polegadas)</span> <strong>17,5”x 6”</strong></li>
+                            <li><span>Pneus</span> <strong>205/75R17,5 14PR</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Abastecimento <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Material do tanque</span> <strong>Alumínio</strong></li>
+                            <li><span>Capacidade (L)</span> <strong>120L</strong></li>
+                            <li><span>Capacidade Arla 32 (L)</span> <strong>14 L</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Direção <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Acionamento</span> <strong>Hidráulico</strong></li>
+                            <li><span>Tipo</span> <strong>Esferas recirculantes</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Pesos (kg) <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Tanque (L)</span> <strong>120</strong></li>
+                            <li><span>Peso em ordem de marcha</span> <strong>2.480</strong></li>
+                            <li><span>Eixo dianteiro - Técnico</span> <strong>3.000</strong></li>
+                            <li><span>Eixo traseiro – Técnico</span> <strong>4.500</strong></li>
+                            <li><span>Peso bruto total (PBT) - Legal</span> <strong>7.000</strong></li>
+                            <li><span>Peso bruto total (PBT) - Técnico</span> <strong>7.500</strong></li>
+                            <li><span>Carga útil + carroceria</span> <strong>4.520</strong></li>
+                            <li><span>Peso bruto combinado (PBTC)</span> <strong>9.000</strong></li>
+                            <li><span>Capacidade máxima de tração</span> <strong>9.000</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">Dimensões (mm) <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Comprimento total</span> <strong>5.960</strong></li>
+                            <li><span>Largura máxima dianteira</span> <strong>1.945</strong></li>
+                            <li><span>Altura</span> <strong>2.250</strong></li>
+                            <li><span>Distância entre eixos</span> <strong>3.360</strong></li>
+                            <li><span>Largura máxima traseira</span> <strong>1.945</strong></li>
+                            <li><span>Balanço dianteiro</span> <strong>1.110</strong></li>
+                            <li><span>Balanço traseiro</span> <strong>1.490</strong></li>
+                            <li><span>Distância do solo</span> <strong>190</strong></li>
+                            <li><span>Bitola dianteira</span> <strong>1.590</strong></li>
+                            <li><span>Bitola traseira</span> <strong>1.485</strong></li>
+                            <li><span>Comprimento plataforma de carga</span> <strong>4.170</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Itens de Série <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Sistema de Freios Antibloqueio (ABS)</span></li>
+                            <li><span>Controle Eletrônico de Estabilidade (ESC)</span></li>
+                            <li><span>Controle de Tração (ASR)</span></li>
+                            <li><span>Luz de rodagem diurna (DRL)</span></li>
+                            <li><span>Controle de cruzeiro</span></li>
+                            <li><span>Banco do condutor com amortecimento</span></li>
+                            <li><span>Vidros elétricos</span></li>
+                            <li><span>Freio dianteiro e traseiro a tambor</span></li>
+                            <li><span>Barra estabilizadora dianteira e traseira</span></li>
+                            <li><span>Defletor de ar</span></li>
+                            <li><span>Volante multifuncional</span></li>
+                            <li><span>MP3 + Bluetooth</span></li>
+                            <li><span>Sirene de marcha ré</span></li>
+                            <li><span>Sensor de marcha ré</span></li>
+                            <li><span>Ar condicionado automático</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 2. ACORDEÃO AUMARK S 916 (Oculto por padrão) -->
+        <div class="specs-accordion" id="specs-916" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">Motor <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Fabricante/Modelo</span> <strong>Cummins</strong></li>
+                            <li><span>Potência Líq. máxima - cv / rpm (*)</span> <strong>(Aguardando dados)</strong></li>
+                            <li><span>Torque máximo - Nm / rpm (*)</span> <strong>(Aguardando dados)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Pesos (kg) <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Peso bruto total (PBT) - Legal</span> <strong>(Aguardando dados)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- 3. ACORDEÃO AUMARK S 1217 (Oculto por padrão) -->
+        <div class="specs-accordion" id="specs-1217" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">Motor <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Fabricante/Modelo</span> <strong>Cummins</strong></li>
+                            <li><span>Potência Líq. máxima - cv / rpm (*)</span> <strong>(Aguardando dados)</strong></li>
+                            <li><span>Torque máximo - Nm / rpm (*)</span> <strong>(Aguardando dados)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">Pesos (kg) <span class="accordion-icon"></span></button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <ul class="spec-details-list">
+                            <li><span>Peso bruto total (PBT) - Legal</span> <strong>(Aguardando dados)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </section>
+        
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html">
+                    <img src="assets/logo_foton.png" alt="Foton Logo" class="footer-logo">
+                </a>
+                <p>Força que move, Eficiência que Lidera.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Principais Serviços</h4>
+                <ul>
+                    <li><a href="novos.html">Veículos Novos</a></li>
+                    <li><a href="index.html#seminovos">Seminovos Inspecionados</a></li>
+                    <li><a href="#">Peças e Acessórios</a></li>
+                    <li><a href="#">Serviços e Revisão</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-quote">
+                <h4>Pronto para acelerar?</h4>
+                <p>Garanta as melhores condições para expandir sua frota.</p>
+                <a href="index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© Copyright 2026 - Someval Foton. Todos os direitos reservados.</p>
+            <p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

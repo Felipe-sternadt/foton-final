@@ -7,27 +7,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #ffffff;"> <header class="navbar-container">
+<body style="background-color: #ffffff;">
+    <header class="navbar-container">
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html#home">
+                <a href="index.html#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); ">
                     <img src="assets/logo_foton.png" alt="Foton Logo">
                 </a>
             </div>
+            
             <ul class="nav-links">
-                <li><a href="index.html#modelos">Novos</a></li>
+                <li><a href="novos.html">Novos</a></li>
                 <li><a href="index.html#seminovos">Seminovos</a></li>
-                <li><a href="index.html#home">Serviços</a></li> <li><a href="index.html#home">Peças e Acessórios</a></li>
-                <li><a href="index.html#home">Ofertas</a></li>
+                <li><a href="index.html#home">Serviços</a></li>
+                <li><a href="index.html#home">Peças e Acessórios</a></li>
                 <li><a href="index.html#contato">Contato</a></li>
             </ul>
+            
             <div class="nav-buttons">
-                <a href="index.html#contato" class="btn-nav">SOLICITE COTAÇÃO</a>
+                <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
                 <a href="#" class="btn-nav">WHATSAPP</a>
             </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+        
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="index.html#seminovos">Seminovos</a></li>
+            <li><a href="index.html#home">Serviços</a></li>
+            <li><a href="index.html#home">Peças e Acessórios</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        
+        <div class="sidebar-buttons">
+            <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            <a href="#" class="btn-nav outline">WHATSAPP</a>
+        </div>
+    </aside>
     <section class="product-showcase">
         
         <div class="showcase-top">
@@ -45,8 +69,8 @@
             
             <h2 class="showcase-main-title">Aumark S 315</h2>
             <div class="showcase-actions">
-                <a href="index.html#contato" class="btn-showcase solid">Solicitar Cotação</a>
-                <a href="index.html#contato" class="btn-showcase outline">Test Drive</a>
+                <a href="index.html?modelo=aumark-s-315#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="test-drive.html?modelo=aumark-s-315" class="btn-showcase outline">Agendar Test Drive</a>
             </div>
             <div class="showcase-badges">
                 <span class="badge-novo">Novo</span>
@@ -59,18 +83,18 @@
         <div class="specs-container">
             <div class="specs-content">
                 
-                <div class="spec-item">
-                    <span class="spec-number">150 <span class="spec-unit">cv</span></span>
+              <div class="spec-item">
+                    <span class="spec-number"><span class="counter" data-target="150">0</span> <span class="spec-unit">cv</span></span>
                     <p class="spec-desc">Potência máxima com o novo motor Cummins F2.5 (a 2.900 rpm)</p>
                 </div>
 
                 <div class="spec-item">
-                    <span class="spec-number">400 <span class="spec-unit">Nm</span></span>
+                    <span class="spec-number"><span class="counter" data-target="400">0</span> <span class="spec-unit">Nm</span></span>
                     <p class="spec-desc">Torque máximo garantindo força em qualquer subida (1.200 - 2.500 rpm)</p>
                 </div>
 
                 <div class="spec-item">
-                    <span class="spec-number">3.500 <span class="spec-unit">kg</span></span>
+                    <span class="spec-number"><span class="counter" data-target="3500">0</span> <span class="spec-unit">kg</span></span>
                     <p class="spec-desc">Peso Bruto Total (PBT) legal, permitindo habilitação categoria B</p>
                 </div>
 
@@ -578,7 +602,7 @@
             <div class="footer-links">
                 <h4>Principais Serviços</h4>
                 <ul>
-                    <li><a href="index.html#modelos">Veículos Novos</a></li>
+                    <li><a href="novos.html">Veículos Novos</a></li>
                     <li><a href="index.html#seminovos">Seminovos Inspecionados</a></li>
                     <li><a href="#">Peças e Acessórios</a></li>
                     <li><a href="#">Serviços e Revisão</a></li>
@@ -588,7 +612,7 @@
             <div class="footer-quote">
                 <h4>Pronto para acelerar?</h4>
                 <p>Garanta as melhores condições para expandir sua frota.</p>
-                <a href="index.html#contato" class="btn-footer-quote">Solicite Cotação</a>
+                <a href="index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a>
             </div>
 
             <div class="footer-social">

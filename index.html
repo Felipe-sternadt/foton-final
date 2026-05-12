@@ -15,24 +15,47 @@
     <header class="navbar-container">
         <nav class="navbar">
             <div class="logo">
-                <a href="#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+                <a href="index.html#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
                     <img src="assets/logo_foton.png" alt="Foton Logo">
                 </a>
             </div>
+            
             <ul class="nav-links">
-                <li><a href="#modelos">Novos</a></li>
-                <li><a href="#seminovos">Seminovos</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Peças e Acessórios</a></li>
-
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="index.html#seminovos">Seminovos</a></li>
+                <li><a href="index.html#home">Serviços</a></li>
+                <li><a href="index.html#home">Peças e Acessórios</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
             </ul>
-           <div class="nav-buttons">
-    <a href="#contato" class="btn-nav">SOLICITE COTAÇÃO</a>
-    <a href="#" class="btn-nav">WHATSAPP</a>
-</div>
+            
+            <div class="nav-buttons">
+                <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+                <a href="#" class="btn-nav">WHATSAPP</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+        
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="#seminovos">Seminovos</a></li>
+            <li><a href="#home">Serviços</a></li>
+            <li><a href="#home">Peças e Acessórios</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        
+        <div class="sidebar-buttons">
+            <a href="#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            <a href="#" class="btn-nav outline">WHATSAPP</a>
+        </div>
+    </aside>
 
     <!-- ==============================
          SECTION 1: HERO 
@@ -91,21 +114,25 @@
     <p class="card-desc">Agilidade urbana com eficiência máxima para entregas ágeis.</p>
     <div class="card-actions">
         <button class="action-btn btn-detalhes" onclick="event.stopPropagation(); window.location.href='aumark-s-315.html'">Detalhes</button>
-        <button class="action-btn btn-cotacao" onclick="event.stopPropagation();">Cotação</button>
-        <button class="action-btn btn-test" onclick="event.stopPropagation();">Test Drive</button>
+        <button class="action-btn btn-cotacao" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-315#formCotacao'">Cotação</button>
+        <button class="action-btn btn-test" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-315'">Test Drive</button>
+</div>
+</div>
+<!-- Card do Aumark S 715 no index.html -->
+<div class="model-card" onclick="window.location.href='aumark-s-715.html'" style="cursor: pointer;">
+    <div class="card-img">
+        <img src="assets/modelo_2.webp" alt="Foton Aumark S 715">
+    </div>
+    <h3 class="card-number">02</h3>
+    <h4 class="card-title">AUMARK S 715</h4>
+    <p class="card-desc">Potência e versatilidade na medida certa para o seu negócio.</p>
+    <div class="card-actions">
+        <!-- Detalhes agora vai para a página do produto -->
+        <button class="action-btn btn-detalhes" onclick="event.stopPropagation(); window.location.href='aumark-s-715.html'">DETALHES</button>
+        <button class="action-btn btn-cotacao" onclick="event.stopPropagation(); window.location.href='#formCotacao?modelo=aumark-s-715'">COTAÇÃO</button>
+        <button class="action-btn btn-test" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-715'">TEST DRIVE</button>
     </div>
 </div>
-                        <div class="model-card">
-                            <div class="card-img"><img src="assets/modelo_2.webp" alt="AUMARK S 715/916/1217"></div>
-                            <span class="card-number">02</span>
-                            <h3 class="card-title">AUMARK S 715/916/1217</h3>
-                            <p class="card-desc">Versatilidade e robustez para curtas e médias distâncias.</p>
-                            <div class="card-actions">
-                                <button class="action-btn btn-detalhes">Detalhes</button>
-                                <button class="action-btn btn-cotacao">Cotação</button>
-                                <button class="action-btn btn-test">Test Drive</button>
-                            </div>
-                        </div>
                         <div class="model-card">
                             <div class="card-img"><img src="assets/modelo_3.webp" alt="IBLUE"></div>
                             <span class="card-number">03</span>
@@ -212,7 +239,7 @@
             </div>
 
             <!-- Lado Direito: Formulário Premium Flutuante -->
-            <div class="contato-form-wrapper">
+           <div class="contato-form-wrapper" id="formCotacao">
                 <form class="contato-form">
                     <h3 class="form-title">Sua Mensagem</h3>
                     
@@ -260,7 +287,7 @@
                     <div class="form-row">
                         <div class="input-group">
                             <label>Modelo *</label>
-                            <select required>
+                           <select id="modeloSelect" required>
                                 <option value="" disabled selected>Selecione o modelo</option>
                                 <option value="Aumark S 315">Aumark S 315</option>
                                 <option value="Aumark S 715/916/1217">Aumark S 715/916/1217</option>
@@ -325,7 +352,7 @@
             <div class="footer-links">
                 <h4>Principais Serviços</h4>
                 <ul>
-                    <li><a href="#modelos">Veículos Novos</a></li>
+                     <li><a href="novos.html">Veículos Novos</a></li>
                     <li><a href="#seminovos">Seminovos Inspecionados</a></li>
                     <li><a href="#">Peças e Acessórios</a></li>
                     <li><a href="#">Serviços e Revisão</a></li>
@@ -335,7 +362,7 @@
             <div class="footer-quote">
                 <h4>Pronto para acelerar?</h4>
                 <p>Garanta as melhores condições para expandir sua frota.</p>
-                <a href="#contato" class="btn-footer-quote">Solicite Cotação</a>
+                <a href="#formCotacao" class="btn-footer-quote">Solicite Cotação</a>
             </div>
 
             <div class="footer-social">

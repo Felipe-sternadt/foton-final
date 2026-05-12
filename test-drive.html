@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agende seu Test Drive | Foton Caminhões</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="td-page" style="background-color: #ffffff;">
+
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo_foton.png" alt="Foton Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="index.html#seminovos">Seminovos</a></li>
+                <li><a href="index.html#home">Serviços</a></li>
+                <li><a href="index.html#home">Peças e Acessórios</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">×</button>
+        
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="index.html#seminovos">Seminovos</a></li>
+            <li><a href="index.html#home">Serviços</a></li>
+            <li><a href="index.html#home">Peças e Acessórios</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        
+        <div class="sidebar-buttons">
+            <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            <a href="#" class="btn-nav outline">WHATSAPP</a>
+        </div>
+    </aside>
+
+   <section class="test-drive-section">
+    <div class="td-layout">
+        
+        <div class="td-visual">
+            <h2 class="td-main-title">Escolha o Foton ideal para você</h2>
+            
+            <div class="td-car-display">
+                <img id="tdCarImage" src="assets/modelo_1.webp" alt="Caminhão Foton">
+            </div>
+            
+            <h3 id="tdCarName" class="td-car-name">Aumark S 315</h3>
+
+            <div class="td-left-selector">
+                <label>Selecione o Modelo</label>
+                <select id="tdModeloSelect" required>
+                    <option value="Aumark S 315" selected>Aumark S 315</option>
+                    <option value="Aumark S 715/916/1217">Aumark S 715/916/1217</option>
+                    <option value="IBlue">IBlue</option>
+                    <option value="Auman D 1722">Auman D 1722</option>
+                    <option value="Tunland">Tunland</option>
+                    <option value="eWonder">eWonder</option>
+                    <option value="eToano Pro">eToano Pro</option>
+                    <option value="eView Grand">eView Grand</option>
+                    <option value="eView Connect">eView Connect</option>
+                    <option value="eAumark">eAumark</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="td-form-area">
+            <form class="td-form">
+                
+                <div class="td-form-section">
+                    <h4>Dados Pessoais</h4>
+                    <div class="input-group">
+                        <label>CPF/CNPJ *</label>
+                        <input type="text" placeholder="CPF ou CNPJ" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Nome Completo *</label>
+                        <input type="text" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>E-mail *</label>
+                            <input type="email" placeholder="Insira seu e-mail" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Celular *</label>
+                            <input type="tel" placeholder="(00) 00000-0000" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="td-form-section">
+    <h4>Agendamento</h4>
+    <div class="form-row">
+        <div class="input-group">
+            <label>Data Preferencial *</label>
+            <input type="date" id="dataAgendamento" required>
+        </div>
+        <div class="input-group">
+            <label>Horário *</label>
+            <select id="horarioAgendamento" required>
+                <option value="" disabled selected>Selecionar...</option>
+                <option value="08:30">08:30</option>
+                <option value="10:00">10:00</option>
+                <option value="13:30">13:30</option>
+                <option value="15:00">15:00</option>
+                <option value="16:30">16:30</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+                <div class="td-form-section">
+                    <h4>Localize uma concessionária</h4>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Estado *</label>
+                            <select id="estadoSelect" required>
+                                <option value="" disabled selected>Selecionar...</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Cidade *</label>
+                            <select id="cidadeSelect" required disabled>
+                                <option value="" disabled selected>Selecionar...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Unidade de Preferência *</label>
+                        <select required>
+                            <option value="" disabled selected>Selecione a unidade</option>
+                            <option value="Palhoça SC">Palhoça SC</option>
+                            <option value="Joinville SC">Joinville SC</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit td-btn">AGENDAR TEST DRIVE</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html">
+                    <img src="assets/logo_foton.png" alt="Foton Logo" class="footer-logo">
+                </a>
+                <p>Força que move, Eficiência que Lidera.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Principais Serviços</h4>
+                <ul>
+                     <li><a href="novos.html">Veículos Novos</a></li>
+                    <li><a href="index.html#seminovos">Seminovos Inspecionados</a></li>
+                    <li><a href="index.html#home">Peças e Acessórios</a></li>
+                    <li><a href="index.html#home">Serviços e Revisão</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-quote">
+                <h4>Pronto para acelerar?</h4>
+                <p>Garanta as melhores condições para expandir sua frota.</p>
+                <a href="index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© Copyright 2026 - Someval Foton. Todos os direitos reservados.</p>
+            <p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,47 +1,122 @@
+/* =======================================================
+   FUNÇÕES GLOBAIS DA GALERIA DO AUMARK S 315
+   ======================================================= */
+function changeGalleryImage(thumbnail) {
+    const mainImg = document.getElementById('mainGalleryImg');
+    mainImg.style.opacity = 0; 
+    setTimeout(() => {
+        mainImg.src = thumbnail.src;
+        mainImg.style.opacity = 1;
+    }, 150);
+
+    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
+    allThumbs.forEach(t => t.classList.remove('active'));
+    thumbnail.classList.add('active');
+}
+
+function filterGallery(type, btn) {
+    const allBtns = document.querySelectorAll('.sidebar-btn');
+    allBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
+    let firstVisibleThumb = null;
+
+    allThumbs.forEach(thumb => {
+        if (thumb.getAttribute('data-type') === type) {
+            thumb.style.display = 'block';
+            if (!firstVisibleThumb) firstVisibleThumb = thumb; 
+        } else {
+            thumb.style.display = 'none';
+        }
+    });
+
+    if (firstVisibleThumb) {
+        changeGalleryImage(firstVisibleThumb);
+    }
+}
+
+/* =======================================================
+   FUNÇÃO DA SEÇÃO DE VERSÕES E ACORDEÃO (AUMARK S 315)
+   ======================================================= */
+function selectVersion(versionId, selectedTab) {
+    const allSpecs = document.querySelectorAll('.specs-accordion');
+    let openIndex = -1;
+
+    allSpecs.forEach(spec => {
+        if (getComputedStyle(spec).display !== 'none') {
+            const items = spec.querySelectorAll('.accordion-item');
+            items.forEach((item, index) => {
+                if (item.classList.contains('active')) {
+                    openIndex = index;
+                }
+            });
+        }
+    });
+
+    const tabs = document.querySelectorAll('.version-tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    selectedTab.classList.add('active');
+    
+    allSpecs.forEach(spec => {
+        spec.style.display = 'none';
+    });
+
+    const activeSpec = document.getElementById('specs-' + versionId);
+    if (activeSpec) {
+        activeSpec.style.display = 'flex';
+
+        if (openIndex !== -1) {
+            const newItems = activeSpec.querySelectorAll('.accordion-item');
+            if (newItems[openIndex]) {
+                const targetItem = newItems[openIndex];
+                const targetContent = targetItem.querySelector('.accordion-content');
+                
+                newItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.accordion-content').style.maxHeight = null;
+                });
+
+                targetItem.classList.add('active');
+                setTimeout(() => {
+                    targetContent.style.maxHeight = targetContent.scrollHeight + 50 + "px";
+                }, 50);
+            }
+        }
+    }
+}
+
+/* =======================================================
+   INÍCIO DO DOM - EXECUTADO APÓS A PÁGINA CARREGAR
+   ======================================================= */
 document.addEventListener('DOMContentLoaded', () => {
 
-
-    /* =======================================================
-       0. FIX DE NAVEGAÇÃO (Impede o Observer de roubar a tela)
-       ======================================================= */
+    /* --- 1. FIX DE NAVEGAÇÃO (IMPEDE O OBSERVER DE ROUBAR A TELA) --- */
     let isNavigating = false;
     let navTimeout = null;
 
-    // Detecta quando qualquer link do menu for clicado
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function() {
-            isNavigating = true; // Avisa o sistema que estamos viajando
+            isNavigating = true; 
             clearTimeout(navTimeout);
-            
-            // Desliga a trava por 1.5 segundos até chegar no destino
             navTimeout = setTimeout(() => { 
                 isNavigating = false; 
             }, 1500);
         });
     });
-/* =======================================================
-       00. CONTROLE DE ANIMAÇÕES (F5 / VOLTANDO DE OUTRAS PÁGINAS)
-       ======================================================= */
+
+    /* --- 2. CONTROLE DE ANIMAÇÕES (F5 / VOLTAR PÁGINA) --- */
     const navEntry = performance.getEntriesByType("navigation")[0];
     const navType = navEntry ? navEntry.type : '';
-    
-    // Descobre se o usuário veio de um link de dentro do seu próprio site
     const veioDeDentroDoSite = document.referrer.includes(window.location.hostname) && document.referrer !== '';
-
     let pularAnimacoes = false;
 
     if (navType === 'reload') {
-        // 1. O usuário deu F5 (Atualizou a página) -> DEIXA ANIMAR
         pularAnimacoes = false;
-    } else if (navType === 'back_forward') {
-        // 2. O usuário clicou na "Seta de Voltar" do navegador -> PULA A ANIMAÇÃO
-        pularAnimacoes = true;
-    } else if (veioDeDentroDoSite) {
-        // 3. O usuário clicou no logo vindo da página Aumark -> PULA A ANIMAÇÃO
+    } else if (navType === 'back_forward' || veioDeDentroDoSite) {
         pularAnimacoes = true;
     }
 
-    // Aplica o bloqueio apenas se não for F5 e não for o primeiro acesso limpo
     if (pularAnimacoes) {
         document.body.classList.add('disable-animations');
         document.querySelectorAll('.models-section, .seminovos-section').forEach(sec => {
@@ -49,48 +124,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
    
-   
-   
     if (window.location.hash) {
         isNavigating = true;
         setTimeout(() => {
             isNavigating = false;
-        }, 2000); // 2 segundos para dar tempo de carregar e rolar
+        }, 2000); 
     }
  
-    /* =======================================================
-       1. HERO + SMART NAVBAR
-       ======================================================= */
+    /* --- 3. HERO + SMART NAVBAR --- */
     const heroSection = document.querySelector('.hero');
     const navbarContainer = document.querySelector('.navbar-container');
     const viewportHeight = window.innerHeight;
-
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY || document.documentElement.scrollTop;
 
-        // HERO EFFECT
-        if (currentScroll <= viewportHeight) {
-            const progress = currentScroll / viewportHeight;
-            const scale = 1 + (progress * 0.20);
-            const blur = progress * 12;
-            const opacity = 1 - (progress * 0.4);
-
-            heroSection.style.transform = `scale(${scale})`;
-            heroSection.style.filter = `blur(${blur}px) brightness(${opacity})`;
-      // HERO EFFECT (Protegido para páginas que não tem a Hero)
+        // HERO EFFECT (Apenas onde a hero existe)
         if (heroSection) {
             if (currentScroll <= viewportHeight) {
                 const progress = currentScroll / viewportHeight;
                 const scale = 1 + (progress * 0.20);
                 const blur = progress * 12;
                 const opacity = 1 - (progress * 0.4);
-
                 heroSection.style.transform = `scale(${scale})`;
                 heroSection.style.filter = `blur(${blur}px) brightness(${opacity})`;
             }
-        }
         }
 
         // NAVBAR SMART
@@ -101,77 +160,23 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbarContainer.classList.remove('navbar-hidden');
         }
-
         lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     });
 
-
-    /* =======================================================
-       2. SCROLL LOCK + OBSERVER PREMIUM (SEM TREMER)
-       ======================================================= */
-    let isLocked = false;
-
-    function lockScroll(duration = 1200) {
-        if (isLocked) return;
-
-        isLocked = true;
-        document.body.style.overflow = 'hidden';
-
-        setTimeout(() => {
-            document.body.style.overflow = '';
-            isLocked = false;
-        }, duration);
-    }
-
-    const sectionStates = new Map();
-
+    /* --- 4. SCROLL LOCK + OBSERVER (SEÇÕES) --- */
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const section = entry.target;
-
-            if (!sectionStates.has(section)) {
-                sectionStates.set(section, false);
-            }
-
-            const alreadyTriggered = sectionStates.get(section);
-
-            if (entry.isIntersecting && !isLocked && !alreadyTriggered && !isNavigating) {
-
-                sectionStates.set(section, true);
-
-                window.scrollTo({
-                    top: section.offsetTop,
-                    behavior: 'auto'
-                });
-
-                setTimeout(() => {
-                    section.classList.add('is-visible');
-
-                    if (section.classList.contains('models-section')) {
-                        lockScroll(1400);
-                    }
-
-                    if (section.classList.contains('seminovos-section')) {
-                        lockScroll(1400);
-                    }
-
-                }, 120);
-            }
-
-            // Quando sair da section, libera só ela
-            if (!entry.isIntersecting) {
-                sectionStates.set(section, false);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
             }
         });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.3 }); 
 
-    document.querySelectorAll('.models-section, .seminovos-section')
-        .forEach(section => sectionObserver.observe(section));
+    document.querySelectorAll('.models-section, .seminovos-section').forEach(section => {
+        sectionObserver.observe(section);
+    });
 
-
-    /* =======================================================
-       3. SLIDER
-       ======================================================= */
+    /* --- 5. SLIDER DE MODELOS --- */
     const track = document.getElementById('sliderTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -182,7 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getCardWidth() {
         if (!cards || !cards.length) return 0;
-        return cards[0].getBoundingClientRect().width + 30;
+        const trackStyle = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyle.gap) || 0;
+        return cards[0].getBoundingClientRect().width + gap;
     }
 
     function updateSlider() {
@@ -195,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardsVisible = Math.round(viewportWidth / cardWidth);
         const maxIndex = totalCards - cardsVisible;
 
-        prevBtn.disabled = currentIndex <= 0;
-        nextBtn.disabled = currentIndex >= maxIndex;
+        if (prevBtn) prevBtn.disabled = currentIndex <= 0;
+        if (nextBtn) nextBtn.disabled = currentIndex >= maxIndex;
     }
 
     if (nextBtn && prevBtn) {
@@ -223,23 +230,76 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateSlider);
     setTimeout(updateSlider, 100);
 
+    /* --- 6. SWIPE DO SLIDER NO CELULAR --- */
+    if (track) {
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-    /* =======================================================
-       4. API DO IBGE (ESTADOS E CIDADES DO CONTATO)
-       ======================================================= */
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].clientX; 
+        }, { passive: true });
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].clientX;
+            const minSwipeDistance = 40; 
+            if (touchEndX < touchStartX - minSwipeDistance) {
+                if(nextBtn && !nextBtn.disabled) nextBtn.click();
+            }
+            if (touchEndX > touchStartX + minSwipeDistance) {
+                if(prevBtn && !prevBtn.disabled) prevBtn.click();
+            }
+        }, { passive: true });
+    }
+
+    /* --- 7. ANIMAÇÃO DOS NÚMEROS (CONTADOR) --- */
+    const counters = document.querySelectorAll('.counter');
+    const specsSection = document.querySelector('.aumark-specs-section');
+
+    if (specsSection && counters.length > 0) {
+        const speed = 200; 
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/\./g, ''); 
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc).toLocaleString('pt-BR');
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString('pt-BR');
+                    }
+                };
+                counter.innerText = '0';
+                updateCount();
+            });
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counterObserver.observe(specsSection);
+    }
+
+    /* --- 8. API DO IBGE (ESTADOS E CIDADES) --- */
     const estadoSelect = document.getElementById('estadoSelect');
     const cidadeSelect = document.getElementById('cidadeSelect');
 
     if (estadoSelect && cidadeSelect) {
-        
-        // 1. Busca os Estados assim que a página carrega
         fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
             .then(res => res.json())
             .then(estados => {
                 estadoSelect.innerHTML = '<option value="" disabled selected>Selecione o estado</option>';
                 estados.forEach(estado => {
                     const option = document.createElement('option');
-                    option.value = estado.sigla; // Envia a sigla (Ex: SC, SP)
+                    option.value = estado.sigla; 
                     option.textContent = estado.nome;
                     estadoSelect.appendChild(option);
                 });
@@ -248,15 +308,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Erro ao buscar estados:", error);
             });
 
-        // 2. Quando o usuário escolhe um Estado, carrega as Cidades dele
         estadoSelect.addEventListener('change', function() {
-            const uf = this.value; // Pega a sigla do estado selecionado
-            
-            // Coloca em estado de carregamento e trava a caixa
+            const uf = this.value; 
             cidadeSelect.innerHTML = '<option value="" disabled selected>Carregando cidades...</option>';
             cidadeSelect.disabled = true;
 
-            // Busca as cidades daquele estado específico
             fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios?orderBy=nome`)
                 .then(res => res.json())
                 .then(cidades => {
@@ -267,8 +323,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         option.textContent = cidade.nome;
                         cidadeSelect.appendChild(option);
                     });
-                    
-                    // DESTRAVA a caixa para o usuário poder clicar
                     cidadeSelect.disabled = false;
                 })
                 .catch(error => {
@@ -277,9 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
-/* =======================================================
-       CONTROLE DO MODAL DE TELEFONES
-       ======================================================= */
+
+    /* --- 9. MODAL DE TELEFONES --- */
     const btnOpen = document.getElementById('btnOpenTelefones');
     const btnClose = document.getElementById('btnCloseTelefones');
     const modal = document.getElementById('modalTelefones');
@@ -293,150 +346,209 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('active');
         });
 
-        // Fecha ao clicar fora do conteúdo
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
             }
         });
     }
-}); // Fim do DOMContentLoaded (Tudo deve ficar antes desta linha)
 
-/* =======================================================
-   FUNÇÕES DA GALERIA DO AUMARK S 315
-   ======================================================= */
-function changeGalleryImage(thumbnail) {
-    // 1. Muda a imagem principal
-    const mainImg = document.getElementById('mainGalleryImg');
-    mainImg.style.opacity = 0; // Faz um pequeno "piscar" elegante
-    
-    setTimeout(() => {
-        mainImg.src = thumbnail.src;
-        mainImg.style.opacity = 1;
-    }, 150);
+    /* --- 10. ACORDEÃO NO CLIQUE (AUMARK S 315) --- */
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
-    // 2. Remove a classe 'active' de todas as miniaturas visíveis
-    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
-    allThumbs.forEach(t => t.classList.remove('active'));
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        header.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentAccordion = item.closest('.specs-accordion');
+            const content = item.querySelector('.accordion-content');
+            const allSiblingItems = parentAccordion.querySelectorAll('.accordion-item');
 
-    // 3. Adiciona 'active' na miniatura clicada
-    thumbnail.classList.add('active');
-}
-
-function filterGallery(type, btn) {
-    // 1. Atualiza os botões laterais (Exterior / Interior)
-    const allBtns = document.querySelectorAll('.sidebar-btn');
-    allBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // 2. Filtra as miniaturas
-    const allThumbs = document.querySelectorAll('#galleryThumbnails .thumb');
-    let firstVisibleThumb = null;
-
-    allThumbs.forEach(thumb => {
-        if (thumb.getAttribute('data-type') === type) {
-            thumb.style.display = 'block';
-            if (!firstVisibleThumb) firstVisibleThumb = thumb; // Guarda a primeira imagem da categoria
-        } else {
-            thumb.style.display = 'none';
-        }
-    });
-
-    // 3. Clica automaticamente na primeira imagem da nova categoria escolhida
-    if (firstVisibleThumb) {
-        changeGalleryImage(firstVisibleThumb);
-    }
-}
-/* =======================================================
-   FUNÇÕES DA SEÇÃO DE VERSÕES E ACORDEÃO
-   ======================================================= */
-
-// 1. Função para trocar a Aba da Versão (MT / AMT) mantendo o estado do acordeão
-function selectVersion(versionId, selectedTab) {
-    const allSpecs = document.querySelectorAll('.specs-accordion');
-    let openIndex = -1;
-
-    // A) Antes de trocar, verifica se existe algum item aberto e salva o índice dele
-    allSpecs.forEach(spec => {
-        if (getComputedStyle(spec).display !== 'none') {
-            const items = spec.querySelectorAll('.accordion-item');
-            items.forEach((item, index) => {
-                if (item.classList.contains('active')) {
-                    openIndex = index;
-                }
-            });
-        }
-    });
-
-    // B) Troca o visual das abas
-    const tabs = document.querySelectorAll('.version-tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    selectedTab.classList.add('active');
-    
-    // C) Esconde todos os grupos de especificações
-    allSpecs.forEach(spec => {
-        spec.style.display = 'none';
-    });
-
-    // D) Mostra a versão selecionada e sincroniza o item aberto
-    const activeSpec = document.getElementById('specs-' + versionId);
-    if (activeSpec) {
-        activeSpec.style.display = 'flex';
-
-        // E) Se havia um item aberto, abre o mesmo índice na nova aba
-        if (openIndex !== -1) {
-            const newItems = activeSpec.querySelectorAll('.accordion-item');
-            if (newItems[openIndex]) {
-                const targetItem = newItems[openIndex];
-                const targetContent = targetItem.querySelector('.accordion-content');
-                
-                // Remove 'active' de qualquer outro item que pudesse estar aberto por erro
-                newItems.forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.accordion-content').style.maxHeight = null;
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+                content.style.maxHeight = null;
+            } else {
+                allSiblingItems.forEach(sibling => {
+                    sibling.classList.remove('active');
+                    sibling.querySelector('.accordion-content').style.maxHeight = null;
                 });
-
-                targetItem.classList.add('active');
-                
-                // Timeout para garantir que o display 'flex' foi processado antes de medir scrollHeight
+                item.classList.add('active');
                 setTimeout(() => {
-                    targetContent.style.maxHeight = targetContent.scrollHeight + 50 + "px";
-                }, 50);
+                    content.style.maxHeight = content.scrollHeight + 50 + "px";
+                }, 10);
+            }
+        });
+    });
+
+    /* --- 11. LÓGICA DA SIDEBAR MOBILE / MACBOOK --- */
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarBtn = document.getElementById('closeSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebarLinksElements = document.querySelectorAll('.sidebar-links a, .sidebar-buttons a');
+
+    function openSidebar() {
+        if(sidebar) sidebar.classList.add('active');
+        if(sidebarOverlay) sidebarOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeSidebar() {
+        if(sidebar) sidebar.classList.remove('active');
+        if(sidebarOverlay) sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = ''; 
+    }
+
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', openSidebar);
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        sidebarLinksElements.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+    }
+
+    /* --- 12. AUTO-PREENCHIMENTO DO MODELO (CONTATO E TEST DRIVE) --- */
+    const urlParams = new URLSearchParams(window.location.search);
+    const modeloSelecionado = urlParams.get('modelo');
+
+    const mapaModelosGeral = {
+        'aumark-s-315': 'Aumark S 315',
+        'aumark-s-715': 'Aumark S 715/916/1217',
+        'iblue': 'IBlue',
+        'auman-d-1722': 'Auman D 1722',
+        'tunland': 'Tunland',
+        'ewonder': 'eWonder',
+        'etoano-pro': 'eToano Pro',
+        'eview-grand': 'eView Grand',
+        'eview-connect': 'eView Connect',
+        'eaumark': 'eAumark'
+    };
+
+    // Auto-preenche o formulário de COTAÇÃO (se existir na página)
+    if (modeloSelecionado) {
+        setTimeout(() => {
+            const selectCotacao = document.getElementById('modeloSelect');
+            if (selectCotacao) {
+                const valorExato = mapaModelosGeral[modeloSelecionado];
+                if (valorExato) {
+                    selectCotacao.value = valorExato; 
+                }
+            }
+        }, 500); 
+    }
+
+    /* --- 13. TROCA DE IMAGEM DINÂMICA (PÁGINA DE TEST DRIVE) --- */
+    const tdSelect = document.getElementById('tdModeloSelect');
+    const tdImg = document.getElementById('tdCarImage');
+    const tdName = document.getElementById('tdCarName');
+
+    if (tdSelect && tdImg && tdName) {
+        const imagensModelos = {
+            "Aumark S 315": "assets/modelo_1.webp",
+            "Aumark S 715/916/1217": "assets/modelo_2.webp",
+            "IBlue": "assets/modelo_3.webp",
+            "Auman D 1722": "assets/modelo_4.webp",
+            "Tunland": "assets/modelo_5.webp",
+            "eWonder": "assets/modelo_6.webp",
+            "eToano Pro": "assets/modelo_7.webp",
+            "eView Grand": "assets/modelo_8.webp",
+            "eView Connect": "assets/modelo_9.webp",
+            "eAumark": "assets/modelo_10.webp"
+        };
+
+        function atualizarCarro() {
+            const modeloEscolhido = tdSelect.value;
+            
+            tdImg.style.opacity = 0;
+            tdImg.style.transform = "scale(0.95)";
+            
+            setTimeout(() => {
+                if (imagensModelos[modeloEscolhido]) {
+                    tdImg.src = imagensModelos[modeloEscolhido];
+                }
+                tdName.textContent = modeloEscolhido;
+                
+                tdImg.style.opacity = 1;
+                tdImg.style.transform = "scale(1)";
+            }, 300);
+        }
+
+        tdSelect.addEventListener('change', atualizarCarro);
+
+        // Preenchimento automático para o Test Drive (força a atualização da imagem na chegada)
+        if (modeloSelecionado) {
+            const valorExatoTD = mapaModelosGeral[modeloSelecionado];
+            if (valorExatoTD) {
+                tdSelect.value = valorExatoTD;
+                atualizarCarro(); 
             }
         }
     }
-}
+/* --- Bloqueio de datas retroativas no calendário --- */
+const inputData = document.getElementById('dataAgendamento');
+if (inputData) {
+    const hoje = new Date().toISOString().split('T')[0];
+    inputData.setAttribute('min', hoje); // Define a data mínima como hoje
+}/* --- 14. SISTEMA DE FILTROS (PÁGINA NOVOS.HTML ESTILO PORSCHE) --- */
+    const filterRadios = document.querySelectorAll('.filters-sidebar input[type="radio"]');
+    const porscheCards = document.querySelectorAll('.porsche-card');
+    const btnResetFiltros = document.getElementById('btnResetFiltros');
 
-// 2. Função para abrir/fechar as caixas do Acordeão (APENAS NO CLIQUE)
-const accordionItems = document.querySelectorAll('.accordion-item');
-
-accordionItems.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    
-    header.addEventListener('click', function(e) {
-        e.preventDefault();
+    if (filterRadios.length > 0 && porscheCards.length > 0) {
         
-        // Buscamos o conteúdo e os outros itens dentro do MESMO acordeão visível
-        const parentAccordion = item.closest('.specs-accordion');
-        const content = item.querySelector('.accordion-content');
-        const allSiblingItems = parentAccordion.querySelectorAll('.accordion-item');
+        // Função principal que lê os filtros e esconde/mostra os cards
+        function aplicarFiltros() {
+            // Pega o valor dos radios marcados. Se nenhum estiver, usa 'todos'
+            const modeloSelecionado = document.querySelector('input[name="modelo"]:checked')?.value || 'todos';
+            const combustivelSelecionado = document.querySelector('input[name="combustivel"]:checked')?.value || 'todos';
 
-        if (item.classList.contains('active')) {
-            // Se clicar no que já está aberto, ele fecha
-            item.classList.remove('active');
-            content.style.maxHeight = null;
-        } else {
-            // Fecha todos os outros itens do mesmo grupo antes de abrir o novo
-            allSiblingItems.forEach(sibling => {
-                sibling.classList.remove('active');
-                sibling.querySelector('.accordion-content').style.maxHeight = null;
+            porscheCards.forEach(card => {
+                const cardModelo = card.getAttribute('data-modelo');
+                const cardCombustivel = card.getAttribute('data-combustivel');
+
+                // Verifica se o card bate com o modelo e com o combustível selecionado
+                const matchModelo = (modeloSelecionado === 'todos' || modeloSelecionado === cardModelo);
+                const matchCombustivel = (combustivelSelecionado === 'todos' || combustivelSelecionado === cardCombustivel);
+
+                if (matchModelo && matchCombustivel) {
+                    card.style.display = 'flex'; // Mostra o card
+                } else {
+                    card.style.display = 'none'; // Esconde o card
+                }
             });
-
-            // Abre o item clicado
-            item.classList.add('active');
-            setTimeout(() => {
-                content.style.maxHeight = content.scrollHeight + 50 + "px";
-            }, 10);
         }
-    });
-});
+
+/// Adiciona um "ouvidor" para cada clique nos botões de filtro
+        filterRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                aplicarFiltros(); // Filtra os caminhões
+                
+                // Faz a tela subir suavemente para o topo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Configuração do botão "Reset do Filtro"
+        if (btnResetFiltros) {
+            btnResetFiltros.addEventListener('click', () => {
+                document.querySelector('input[name="modelo"][value="todos"]').checked = true;
+                document.querySelector('input[name="combustivel"][value="todos"]').checked = true;
+                aplicarFiltros(); // Reseta os caminhões
+                
+                // Também faz a tela subir ao resetar
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+    } // 🌟 A CHAVE QUE FALTAVA: Essa chave fecha o "if" dos filtros
+
+}); // Fim do DOMContentLoaded
