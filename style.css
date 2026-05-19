@@ -7215,7 +7215,7 @@ body.vehicle-page .specs-content .spec-unit {
 }
 
 .dealer-map-deferred::before {
-    content: "Mapa disponivel sob demanda";
+    content: "Carregando mapa...";
     position: absolute;
     top: 28px;
     left: 28px;
@@ -7245,30 +7245,6 @@ body.vehicle-page .specs-content .spec-unit {
     pointer-events: auto;
 }
 
-.dealer-map-load {
-    position: relative;
-    z-index: 2;
-    border: 0;
-    border-radius: 999px;
-    padding: 14px 28px;
-    background: #041954;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-weight: 800;
-    font-size: 0.86rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: 0 18px 38px rgba(4, 25, 84, 0.22);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.dealer-map-load:hover {
-    transform: translateY(-2px);
-    background: var(--azul-dawn);
-    box-shadow: 0 22px 48px rgba(4, 25, 84, 0.28);
-}
-
-.dealer-map-deferred.is-loaded .dealer-map-load,
 .dealer-map-deferred.is-loaded::before {
     display: none;
 }

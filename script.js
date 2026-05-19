@@ -903,26 +903,56 @@ if (document.readyState === 'loading') {
 
 function initDeferredDealerMaps() {
     const deferredMaps = document.querySelectorAll('.dealer-map-deferred');
+    if (!deferredMaps.length) return;
+
+    const loadMap = (map) => {
+        if (!map.dataset.mapSrc || map.querySelector('iframe')) return;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = map.dataset.mapSrc;
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.title = map.dataset.mapTitle || 'Mapa da concessionaria';
+        map.appendChild(iframe);
+        map.classList.add('is-loaded');
+    };
+
+    const scheduleMapLoad = (map) => {
+        if (map.dataset.mapScheduled === 'true') return;
+        map.dataset.mapScheduled = 'true';
+
+        const run = () => loadMap(map);
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(run, { timeout: 1200 });
+        } else {
+            setTimeout(run, 650);
+        }
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        deferredMaps.forEach(scheduleMapLoad);
+        return;
+    }
+
+    const mapObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            scheduleMapLoad(entry.target);
+            observer.unobserve(entry.target);
+        });
+    }, {
+        rootMargin: '360px 0px',
+        threshold: 0.01
+    });
 
     deferredMaps.forEach((map) => {
-        const loadButton = map.querySelector('.dealer-map-load');
+        mapObserver.observe(map);
+    });
 
-        if (!map.dataset.mapSrc || !loadButton) return;
-
-        const loadMap = () => {
-            if (!map.querySelector('iframe')) {
-                const iframe = document.createElement('iframe');
-                iframe.src = map.dataset.mapSrc;
-                iframe.loading = 'lazy';
-                iframe.referrerPolicy = 'no-referrer-when-downgrade';
-                iframe.title = map.dataset.mapTitle || 'Mapa da concessionaria';
-                map.insertBefore(iframe, loadButton);
-            }
-
-            map.classList.add('is-loaded');
-        };
-
-        loadButton.addEventListener('click', loadMap);
+    deferredMaps.forEach((map, index) => {
+        setTimeout(() => scheduleMapLoad(map), 1800 + (index * 900));
     });
 }
 
