@@ -905,14 +905,18 @@ function initDeferredDealerMaps() {
     const deferredMaps = document.querySelectorAll('.dealer-map-deferred');
 
     deferredMaps.forEach((map) => {
-        const iframe = map.querySelector('iframe[data-src]');
         const loadButton = map.querySelector('.dealer-map-load');
 
-        if (!iframe || !loadButton) return;
+        if (!map.dataset.mapSrc || !loadButton) return;
 
         const loadMap = () => {
-            if (!iframe.src) {
-                iframe.src = iframe.dataset.src;
+            if (!map.querySelector('iframe')) {
+                const iframe = document.createElement('iframe');
+                iframe.src = map.dataset.mapSrc;
+                iframe.loading = 'lazy';
+                iframe.referrerPolicy = 'no-referrer-when-downgrade';
+                iframe.title = map.dataset.mapTitle || 'Mapa da concessionaria';
+                map.insertBefore(iframe, loadButton);
             }
 
             map.classList.add('is-loaded');
