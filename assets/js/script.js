@@ -905,6 +905,15 @@ function initDeferredDealerMaps() {
     const deferredMaps = document.querySelectorAll('.dealer-map-deferred');
     if (!deferredMaps.length) return;
 
+    const isMobileLike = window.matchMedia('(max-width: 820px), (hover: none) and (pointer: coarse)').matches;
+
+    if (isMobileLike) {
+        deferredMaps.forEach((map) => {
+            map.classList.add('is-mobile-disabled');
+        });
+        return;
+    }
+
     const loadMap = (map) => {
         if (!map.dataset.mapSrc || map.querySelector('iframe')) return;
 
@@ -961,152 +970,4 @@ if (document.readyState === 'loading') {
 } else {
     initDeferredDealerMaps();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

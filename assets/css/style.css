@@ -7186,149 +7186,32 @@ body.vehicle-page .specs-content .spec-unit {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.dealers-page .dealers-section,
+.dealers-page .dealers-intro,
+.dealers-page .dealer-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+.dealers-page .dealer-card {
+    transition: box-shadow 0.28s ease, border-color 0.28s ease !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dealers-page .dealer-card:hover {
+        transform: translateY(-4px) !important;
+    }
+}
+
+@media (max-width: 820px), (hover: none) and (pointer: coarse) {
+    .dealers-page .dealer-card {
+        display: block !important;
+        min-height: 0 !important;
+    }
+
+    .dealers-page .dealer-map {
+        display: none !important;
+    }
+}
 
