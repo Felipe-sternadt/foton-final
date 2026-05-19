@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auman D 1722 | Foton Caminhões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="vehicle-page" style="background-color: #041954;">
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html#home"><img src="assets/logo_foton.png" alt="Foton Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+                <li><a href="concessionarias.html">Concessionárias</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <div class="nav-buttons"><a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+            <li><a href="concessionarias.html">Concessionárias</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <div class="sidebar-buttons"><a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a></div>
+    </aside>
+    <section class="product-showcase">
+        <div class="showcase-top"><h1 class="showcase-watermark">Auman</h1></div>
+        <div class="showcase-image-container"><img src="assets/modelo_4.webp" alt="Auman D 1722" class="showcase-truck"></div>
+        <div class="showcase-bottom">
+            <div class="showcase-categories"><span>220 cv</span><span>Diesel</span><span>Operação robusta</span></div>
+            <h2 class="showcase-main-title">Auman D 1722</h2>
+            <div class="showcase-actions">
+                <a href="index.html?modelo=auman-d-1722#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="test-drive.html?modelo=auman-d-1722" class="btn-showcase outline">Agendar Test Drive</a>
+            </div>
+            <div class="showcase-badges"><span class="badge-novo">Novo</span><span class="badge-tech">Foton</span></div>
+        </div>
+    </section>
+    <section class="aumark-specs-section">
+        <div class="specs-container">
+            <div class="specs-content">
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="220">0</span> <span class="spec-unit">cv</span></span><p class="spec-desc">Potência máxima com motor Cummins F4.5.</p></div>
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="820">0</span> <span class="spec-unit">Nm</span></span><p class="spec-desc">Torque máximo entre 1.200 e 1.500 rpm.</p></div>
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="16000">0</span> <span class="spec-unit">kg</span></span><p class="spec-desc">Peso Bruto Total legal.</p></div>
+            </div>
+            <div class="specs-image"><img src="assets/modelo_4.webp" alt="Auman D 1722"></div>
+        </div>
+    </section>
+    <section class="gallery-section">
+        <h2 class="gallery-main-title">Detalhes do modelo.</h2>
+        <div class="gallery-layout">
+            <div class="gallery-viewer">
+                <div class="gallery-main-img"><img id="mainGalleryImg" src="assets/auman_d_1722_1.webp" alt="Auman D 1722"></div>
+                <div class="gallery-thumbnails" id="galleryThumbnails">
+                    <img src="assets/auman_d_1722_1.webp" class="thumb active" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_2.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_3.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_4.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_5.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_6.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_7.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/auman_d_1722_8.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                </div>
+            </div>
+            <div class="gallery-sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-header"><h3>Perspectiva</h3><span class="icon-minus"></span></div>
+                    <div class="sidebar-options">
+                        <button class="sidebar-btn active" onclick="filterGallery('exterior', this)">Exterior</button>
+                        <button class="sidebar-btn" onclick="filterGallery('interior', this)">Interior</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="versions-section">
+        <h2 class="versions-main-title">Ficha Técnica</h2>
+        <div class="versions-tabs"><div class="version-tab active"><img src="assets/modelo_4.webp" alt="Auman D 1722"><span>FOTON<br><strong>Auman D 1722</strong></span></div></div>
+                <div class="specs-accordion" id="specs-main">
+            <div class="accordion-item"><button class="accordion-header">Motor <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                <li><span>Fabricante/Modelo</span> <strong>Cummins F4.5</strong></li><li><span>Potência Líq. máxima - cv / rpm (*)</span> <strong>220 cv a 2.300 rpm</strong></li><li><span>Torque máximo - Nm / rpm (*)</span> <strong>820 Nm a 1.200-1.500 rpm</strong></li><li><span>Tipo / Nº de cilindros</span> <strong>Diesel - 4 cilindros em linha</strong></li><li><span>Sistema de injeção</span> <strong>Injeção Eletrônica - Commom Rail</strong></li><li><span>Cilindrada total (cm³)</span> <strong>4.500 cm³</strong></li>
+            </ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Transmissão <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                <li><span>Fabricante / Modelo</span> <strong>ZF / 6S1000 TO</strong></li><li><span>Acionamento</span> <strong>Mecânico</strong></li><li><span>Quantidade de marchas</span> <strong>6 (seis) marchas à frente e 1 (uma) marcha à ré</strong></li><li><span>Relação de transmissão</span> <strong>1ª marcha - 6,75:1 / 2ª marcha - 3,60:1 / 3ª marcha - 2,13:1 / 4ª marcha - 1,39:1 / 5ª marcha - 1,00:1 / 6ª marcha - 0,78:1 / Marcha a ré - 6,06:1</strong></li>
+            </ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Freios <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Freio de serviço</span> <strong>A ar, tipo "S" Cam com circuito duplo, dianteiros e traseiros a tambor</strong></li><li><span>Freio de estacionamento</span> <strong>A ar com molas acumuladoras e atuação nas rodas traseiras</strong></li><li><span>Freio-motor</span> <strong>Escape automático (EAT)</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Embreagem <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Acionamento</span> <strong>Hidráulico</strong></li><li><span>Tipo</span> <strong>Disco simples a seco, com platô acionado por mola diafragma</strong></li><li><span>Diâmetro do disco (mm)</span> <strong>395 mm</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Eixo traseiro <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Fabricante/ Tipo</span> <strong>Dana / Eixo rígido com aço estampado</strong></li><li><span>Relação de redução</span> <strong>4,889:1</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Sistema Elétrico <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Tensão nominal</span> <strong>24 V</strong></li><li><span>Bateria (Unidade/Ah/V)</span> <strong>2x(135 Ah) / 12V</strong></li><li><span>Alternador (A/V)</span> <strong>70 A/ 28V</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Suspensão traseira <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Molas</span> <strong>Feixe de molas parabólicas (principal)</strong></li><li><span>Quantidade de lâminas</span> <strong>3</strong></li><li><span>Amortecedores</span> <strong>Telescópicos hidráulicos de dupla ação com barra estabilizadora</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Suspensão dianteira <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Molas</span> <strong>Feixe de molas parabólicas (principal + auxiliar)</strong></li><li><span>Quantidade de lâminas</span> <strong>4+3</strong></li><li><span>Amortecedores</span> <strong>Telescópicos hidráulicos de dupla ação com barra estabilizadora</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Rodas e Pneus <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Material da roda</span> <strong>Aço</strong></li><li><span>Dimensões (Polegadas)</span> <strong>22.5"×8.25"</strong></li><li><span>Pneus</span> <strong>275/80 R22.5</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Abastecimento <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Material do tanque</span> <strong>Alumínio</strong></li><li><span>Capacidade (L)</span> <strong>450 L | 260 L</strong></li><li><span>Capacidade Arla 32 (L)</span> <strong>25 L</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Direção <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Acionamento</span> <strong>Hidráulico</strong></li><li><span>Tipo</span> <strong>Esferas recirculantes</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Pesos (kg) - D 1722 / D 1722L <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Peso em ordem de marcha (Total)</span> <strong>2.680 / 2.730</strong></li><li><span>Eixo dianteiro - Legal</span> <strong>5.500</strong></li><li><span>Eixo traseiro - Legal</span> <strong>10.500</strong></li><li><span>Eixo dianteiro - Técnico</span> <strong>6.600</strong></li><li><span>Eixo traseiro - Técnico</span> <strong>12.100</strong></li><li><span>Peso bruto total (PBT) - Legal</span> <strong>16.000</strong></li><li><span>Peso bruto total (PBT) - Técnico</span> <strong>18.700</strong></li><li><span>Carga útil + carroceria</span> <strong>11.360 / 11.375</strong></li><li><span>Peso bruto combinado (PBTC)</span> <strong>26.000</strong></li><li><span>Capacidade máxima de tração</span> <strong>26.000</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Dimensões (mm) <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Comprimento total</span> <strong>7.650 / 8.900</strong></li><li><span>Largura máxima dianteira</span> <strong>2.488</strong></li><li><span>Altura</span> <strong>2.800</strong></li><li><span>Distância entre eixos</span> <strong>4.200 / 5.150</strong></li><li><span>Largura máxima traseira</span> <strong>2.483</strong></li><li><span>Balanço dianteiro</span> <strong>1.270</strong></li><li><span>Balanço traseiro</span> <strong>2.180 / 2.480</strong></li><li><span>Distância do solo</span> <strong>170</strong></li><li><span>Bitola dianteira</span> <strong>1.972</strong></li><li><span>Bitola traseira</span> <strong>1.840</strong></li><li><span>Comprimento plataforma de carga</span> <strong>5.780 / 7.030</strong></li><li><span>L - Ângulo de ataque</span> <strong>23°</strong></li><li><span>M - Ângulo de saída</span> <strong>10°</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Itens de Série <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list feature-list"><li><span>Volante Multifuncional</span></li><li><span>Luz de rodagem diurna (DRL) em LED</span></li><li><span>Controle de Cruzeiro</span></li><li><span>Sensor de marcha ré</span></li><li><span>Aviso sonoro de marcha ré</span></li><li><span>Painel de instrumento digital com tela de 7"</span></li><li><span>MP3 +Bluetooth</span></li><li><span>Vidros elétricos</span></li><li><span>Barra estabilizadora dianteira e traseira</span></li><li><span>Defletor de ar</span></li><li><span>Ar condicionado Automático</span></li><li><span>Assento do motorista com amortecimento pneumático</span></li><li><span>Acendimento automático de faróis por sensor crepuscular</span></li><li><span>Basculamento elétrico de cabine</span></li><li><span>Assistente de partida em rampa (HSA)</span></li><li><span>Sistema de freios antibloqueio (ABS)</span></li><li><span>Controle eletrônico de estabilidade (ESC)</span></li><li><span>Controle de Tração (ASR)</span></li></ul></div></div></div>
+        </div>
+    
+        <div class="technical-download-wrapper">
+            <a class="technical-download-button" href="assets/auman_d_1722_ficha.pdf" download="auman_d_1722_ficha.pdf" type="application/pdf">Baixar ficha técnica</a>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand"><a href="index.html"><img src="assets/logo_foton.png" alt="Foton Logo" class="footer-logo"></a><p>Força que move, Eficiência que Lidera.</p></div>
+            <div class="footer-links"><h4>Principais Serviços</h4><ul><li><a href="novos.html">Veículos Novos</a></li><li><a href="index.html#servicos">Serviços e Revisão</a></li><li><a href="index.html#pecas">Peças e Acessórios</a></li><li><a href="concessionarias.html">Concessionárias</a></li></ul></div>
+            <div class="footer-quote"><h4>Pronto para acelerar?</h4><p>Garanta as melhores condições para expandir sua frota.</p><a href="index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a></div>
+            <div class="footer-social"><h4>Redes Sociais</h4><div class="social-icons"><a href="https://www.facebook.com/p/Someval-Foton-Caminh%C3%B5es-61557612016827/" target="_blank" rel="noopener" aria-label="Facebook Someval Foton"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.instagram.com/foton.someval/" target="_blank" rel="noopener" aria-label="Instagram Someval Foton"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>Copyright 2026 - Someval Foton. Todos os direitos reservados.</p><p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p></div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

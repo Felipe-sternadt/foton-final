@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foton Caminhões | Força e Tecnologia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Someval Foton</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<body>
 
     <!-- ==============================
          SMART NAVBAR (FIXA E INTELIGENTE)
@@ -22,15 +21,14 @@
             
             <ul class="nav-links">
                 <li><a href="novos.html">Novos</a></li>
-                <li><a href="index.html#seminovos">Seminovos</a></li>
-                <li><a href="index.html#home">Serviços</a></li>
-                <li><a href="index.html#home">Peças e Acessórios</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+                <li><a href="concessionarias.html">Concessionárias</a></li>
                 <li><a href="index.html#contato">Contato</a></li>
             </ul>
             
             <div class="nav-buttons">
                 <a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
-                <a href="#" class="btn-nav">WHATSAPP</a>
             </div>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
@@ -45,15 +43,14 @@
         
         <ul class="sidebar-links">
             <li><a href="novos.html">Novos</a></li>
-            <li><a href="#seminovos">Seminovos</a></li>
-            <li><a href="#home">Serviços</a></li>
-            <li><a href="#home">Peças e Acessórios</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#pecas">Peças e Acessórios</a></li>
+            <li><a href="concessionarias.html">Concessionárias</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
         
         <div class="sidebar-buttons">
             <a href="#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
-            <a href="#" class="btn-nav outline">WHATSAPP</a>
         </div>
     </aside>
 
@@ -69,10 +66,9 @@
         <div class="hero-content">
             <div class="hero-text-wrapper">
                 <h1 class="main-title">
-                    <span class="typing-text line-1">Força Que Move,</span><br>
-                    <span class="typing-text line-2">Eficiência Que Lidera.</span>
+                    <span class="typing-text line-1">Quem trabalha grande,</span><br>
+                    <span class="typing-text line-2">escolhe Foton.</span>
                 </h1>
-                <p class="sub-title">Descubra a tecnologia Foton. Projetados para superar desafios e maximizar a rentabilidade do seu transporte no dia a dia.</p>
             </div>
             <div class="bottom-action-area">
               <div class="action-buttons">
@@ -88,127 +84,219 @@
     </section>
 
     <!-- ==============================
-         SECTION 2: MODELOS
+         SECTION 2: NOVOS
          ============================== -->
-    <section class="models-section" id="modelos">
+    <section class="models-section" id="novos">
         <div class="models-container">
             
             <div class="models-header">
                 <h2 class="section-title">
-                    <span class="typing-models">NOSSOS MODELOS 0KM</span>
+                    <span class="typing-models">FOTON 0 KM</span>
                 </h2>
+                <p class="models-kicker">Tecnologia, robustez e eficiência para operações de todos os tamanhos.</p>
             </div>
 
-            <div class="slider-wrapper">
-                <button id="prevBtn" class="control-btn prev-btn" disabled>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-
-                <div class="slider-viewport">
+            <div class="premium-carousel" aria-label="Carrossel de veículos novos Foton">
+                <div class="slider-viewport" id="modelsCarousel">
                     <div class="slider-track" id="sliderTrack">
-                        
-                       <div class="model-card" onclick="window.location.href='aumark-s-315.html'" style="cursor: pointer;">
-    <div class="card-img"><img src="assets/modelo_1.webp" alt="AUMARK S 315"></div>
-    <span class="card-number">01</span>
-    <h3 class="card-title">AUMARK S 315</h3>
-    <p class="card-desc">Agilidade urbana com eficiência máxima para entregas ágeis.</p>
-    <div class="card-actions">
-        <button class="action-btn btn-detalhes" onclick="event.stopPropagation(); window.location.href='aumark-s-315.html'">Detalhes</button>
-        <button class="action-btn btn-cotacao" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-315#formCotacao'">Cotação</button>
-        <button class="action-btn btn-test" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-315'">Test Drive</button>
-</div>
-</div>
-<!-- Card do Aumark S 715 no index.html -->
-<div class="model-card" onclick="window.location.href='aumark-s-715.html'" style="cursor: pointer;">
-    <div class="card-img">
-        <img src="assets/modelo_2.webp" alt="Foton Aumark S 715">
-    </div>
-    <h3 class="card-number">02</h3>
-    <h4 class="card-title">AUMARK S 715</h4>
-    <p class="card-desc">Potência e versatilidade na medida certa para o seu negócio.</p>
-    <div class="card-actions">
-        <!-- Detalhes agora vai para a página do produto -->
-        <button class="action-btn btn-detalhes" onclick="event.stopPropagation(); window.location.href='aumark-s-715.html'">DETALHES</button>
-        <button class="action-btn btn-cotacao" onclick="event.stopPropagation(); window.location.href='#formCotacao?modelo=aumark-s-715'">COTAÇÃO</button>
-        <button class="action-btn btn-test" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-715'">TEST DRIVE</button>
-    </div>
-</div>
-                        <div class="model-card">
-                            <div class="card-img"><img src="assets/modelo_3.webp" alt="IBLUE"></div>
-                            <span class="card-number">03</span>
-                            <h3 class="card-title">IBLUE</h3>
-                            <p class="card-desc">O futuro do transporte: 100% elétrico, limpo e sustentável.</p>
-                            <div class="card-actions">
-                                <button class="action-btn btn-detalhes">Detalhes</button>
-                                <button class="action-btn btn-cotacao">Cotação</button>
-                                <button class="action-btn btn-test">Test Drive</button>
-                            </div>
-                        </div>
-                        <div class="model-card">
-                            <div class="card-img"><img src="assets/modelo_4.webp" alt="AUMAN D 1722"></div>
-                            <span class="card-number">04</span>
-                            <h3 class="card-title">AUMAN D 1722</h3>
-                            <p class="card-desc">Força bruta para operações severas e as cargas mais exigentes.</p>
-                            <div class="card-actions">
-                                <button class="action-btn btn-detalhes">Detalhes</button>
-                                <button class="action-btn btn-cotacao">Cotação</button>
-                                <button class="action-btn btn-test">Test Drive</button>
-                            </div>
-                        </div>
-                        <div class="model-card">
-                            <div class="card-img"><img src="assets/modelo_5.webp" alt="TUNLAND"></div>
-                            <span class="card-number">05</span>
-                            <h3 class="card-title">TUNLAND</h3>
-                            <p class="card-desc">Picape tecnológica pronta para enfrentar qualquer terreno.</p>
-                            <div class="card-actions">
-                                <button class="action-btn btn-detalhes">Detalhes</button>
-                                <button class="action-btn btn-cotacao">Cotação</button>
-                                <button class="action-btn btn-test">Test Drive</button>
-                            </div>
-                        </div>
+                        <a class="model-card" href="aumark-s-315.html" data-href="aumark-s-315.html">
+                            <div class="card-img"><img src="assets/modelo_1.webp" alt="Aumark S 315"></div>
+                            <h3 class="card-title">AUMARK S 315</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
 
+                        <a class="model-card" href="aumark-s-715.html" data-href="aumark-s-715.html">
+                            <div class="card-img"><img src="assets/modelo_2.webp" alt="Aumark S 715"></div>
+                            <h3 class="card-title">AUMARK S 715</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
+
+                        <a class="model-card" href="aumark-s-916.html" data-href="aumark-s-916.html">
+                            <div class="card-img"><img src="assets/modelo_2.webp" alt="Aumark S 916"></div>
+                            <h3 class="card-title">AUMARK S 916</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
+
+                        <a class="model-card" href="aumark-s-1217.html" data-href="aumark-s-1217.html">
+                            <div class="card-img"><img src="assets/modelo_2.webp" alt="Aumark S 1217"></div>
+                            <h3 class="card-title">AUMARK S 1217</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
+
+                        <!-- Página futura sugerida: iblue.html. Temporariamente direciona para a vitrine de modelos. -->
+                        <a class="model-card" href="iblue.html" data-href="iblue.html">
+                            <div class="card-img"><img src="assets/modelo_3.webp" alt="IBlue"></div>
+                            <h3 class="card-title">IBLUE EV</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
+
+                        <!-- Página futura sugerida: auman-d-1722.html. Temporariamente direciona para a vitrine de modelos. -->
+                        <a class="model-card" href="auman-d-1722.html" data-href="auman-d-1722.html">
+                            <div class="card-img"><img src="assets/modelo_4.webp" alt="Auman D 1722"></div>
+                            <h3 class="card-title">AUMAN D 1722</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
+
+                        <!-- Página futura sugerida: tunland.html. Temporariamente direciona para a vitrine de modelos. -->
+                        <a class="model-card" href="tunland.html" data-href="tunland.html">
+                            <div class="card-img"><img src="assets/modelo_5.webp" alt="Tunland"></div>
+                            <h3 class="card-title">TUNLAND EV</h3>
+                            <p class="card-category">Combustão</p>
+                        </a>
+
+                        <!-- Página futura sugerida: eaumark.html. Temporariamente direciona para a vitrine de modelos. -->
+                        <a class="model-card" href="ewonder.html" data-href="ewonder.html">
+                            <div class="card-img"><img src="assets/modelo_6.webp" alt="eWonder"></div>
+                            <h3 class="card-title">eWONDER</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
+
+                        <a class="model-card" href="etoano-pro.html" data-href="etoano-pro.html">
+                            <div class="card-img"><img src="assets/modelo_7.webp" alt="eToano Pro"></div>
+                            <h3 class="card-title">eTOANO PRO</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
+
+                        <a class="model-card" href="eview-grand.html" data-href="eview-grand.html">
+                            <div class="card-img"><img src="assets/modelo_8.webp" alt="eView Grand"></div>
+                            <h3 class="card-title">eVIEW GRAND</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
+
+                        <a class="model-card" href="eview-connect.html" data-href="eview-connect.html">
+                            <div class="card-img"><img src="assets/modelo_9.webp" alt="eView Connect"></div>
+                            <h3 class="card-title">eVIEW CONNECT</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
+
+                        <a class="model-card" href="eaumark.html" data-href="eaumark.html">
+                            <div class="card-img"><img src="assets/modelo_10.webp" alt="eAumark"></div>
+                            <h3 class="card-title">eAUMARK</h3>
+                            <p class="card-category">Elétrico</p>
+                        </a>
                     </div>
                 </div>
-
-                <button id="nextBtn" class="control-btn next-btn">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
+                <p class="carousel-hint" aria-hidden="true">Arraste para o lado para explorar os modelos</p>
             </div>
         </div>
     </section>
 <!-- ==============================
-         SECTION 3: SEMINOVOS 
+         SECTION 3: MOTORES CUMMINS
          ============================== -->
-    <section class="seminovos-section" id="seminovos">
-        <div class="semi-container">
-            
-            <div class="semi-content">
-                <!-- Título com animação de Typing -->
-                <h2 class="semi-title">SEMINOVOS</h2>
-                
-                <div class="semi-divider"></div>
-                
-                <!-- Texto descritivo com animação de slide -->
-                <p class="semi-text">
-                    Nossa seleção de seminovos oferece a mesma robustez e confiança que você espera de um Foton 0km. 
-                    Cada veículo passa por uma rigorosa inspeção técnica para garantir que sua operação nunca pare. 
-                    Encontre a melhor relação custo-benefício para expandir sua frota com segurança.
-                </p>
-
-                <!-- Botão com animação de slide -->
-                <button class="semi-btn">VER ESTOQUE COMPLETO</button>
+    <div class="section-anchor" id="servicos"></div>
+    <div class="section-anchor" id="pecas"></div>
+    <section class="cummins-section" id="cummins">
+        <div class="cummins-experience">
+            <div class="cummins-header">
+                <span class="cummins-eyebrow">Tecnologia global</span>
+                <h2 class="cummins-title">Motores Cummins</h2>
+                <p class="cummins-lead">Confiabilidade mundial, desempenho extremo e eficiência operacional em uma experiência pensada para quem depende do caminhão todos os dias.</p>
             </div>
 
-            <!-- Imagem lateral -->
-            <div class="semi-image-wrapper">
-                <img src="assets/section_3.jpg" alt="Seminovos Foton">
+            <div class="cummins-slider" aria-label="Diferenciais dos motores Cummins">
+                <button class="cummins-arrow cummins-arrow-prev" type="button" aria-label="Card anterior">
+                    <span aria-hidden="true">‹</span>
+                </button>
+
+                <div class="cummins-stage">
+                    <div class="cummins-copy-stage">
+                    <article class="cummins-slide is-active" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Confiança global</span>
+                            <h3>Engenharia para operar sem pausa</h3>
+                            <p>Os motores Cummins são reconhecidos em operações exigentes no mundo todo, unindo tradição, robustez e uma arquitetura preparada para alto ciclo de trabalho.</p>
+                            <strong>Um dos nomes mais confiáveis em motores comerciais.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com engenharia de confiabilidade global">
+                        </div>
+                    </article>
+
+                    <article class="cummins-slide" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Performance eficiente</span>
+                            <h3>Força, torque e economia na medida certa</h3>
+                            <p>Resposta consistente, entrega de torque em baixa rotação e eficiência para reduzir custo operacional sem abrir mão da performance em carga.</p>
+                            <strong>Desempenho preciso para cidade, estrada e operação intensa.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com foco em torque e eficiência">
+                        </div>
+                    </article>
+
+                    <article class="cummins-slide" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Segurança operacional</span>
+                            <h3>Tecnologia para proteger sua frota</h3>
+                            <p>Projeto durável, calibração inteligente e estabilidade de entrega criam uma condução mais segura, previsível e preparada para operações críticas.</p>
+                            <strong>Durabilidade e previsibilidade para decisões de frota.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com tecnologia e durabilidade">
+                        </div>
+                    </article>
+
+                    <article class="cummins-slide" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Baixo custo operacional</span>
+                            <h3>Eficiência que aparece na operação</h3>
+                            <p>Calibração precisa, entrega progressiva de força e construção robusta ajudam a reduzir paradas, otimizar consumo e manter a produtividade da frota.</p>
+                            <strong>Mais disponibilidade, menos custo parado.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com foco em eficiência operacional">
+                        </div>
+                    </article>
+
+                    <article class="cummins-slide" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Durabilidade extrema</span>
+                            <h3>Construído para ciclos severos</h3>
+                            <p>Componentes dimensionados para uso profissional entregam resistência em rotas urbanas, carga constante e longas jornadas, mantendo resposta consistente ao longo do tempo.</p>
+                            <strong>Robustez para quem não pode depender da sorte.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com construção robusta">
+                        </div>
+                    </article>
+
+                    <article class="cummins-slide" data-cummins-slide>
+                        <div class="cummins-card-copy">
+                            <span class="cummins-card-kicker">Tradição mundial</span>
+                            <h3>Confiança reconhecida globalmente</h3>
+                            <p>Com presença consolidada em mercados exigentes, a Cummins combina tecnologia, assistência e reputação para entregar segurança em decisões de frota.</p>
+                            <strong>Uma referência mundial em motores diesel comerciais.</strong>
+                        </div>
+                        <div class="cummins-card-media">
+                            <img src="assets/motor_cummins.webp" alt="Motor Cummins com tradição global">
+                        </div>
+                    </article>
+                    </div>
+                    <div class="cummins-fixed-media" aria-hidden="true">
+                        <div class="cummins-fixed-glow"></div>
+                        <img src="assets/motor_cummins.webp" alt="">
+                    </div>
+                </div>
+
+                <button class="cummins-arrow cummins-arrow-next" type="button" aria-label="Próximo card">
+                    <span aria-hidden="true">›</span>
+                </button>
             </div>
 
+            <div class="cummins-dots" aria-label="Navegação dos cards Cummins">
+                <button class="is-active" type="button" aria-label="Ver confiabilidade global"></button>
+                <button type="button" aria-label="Ver performance eficiente"></button>
+                <button type="button" aria-label="Ver segurança operacional"></button>
+                <button type="button" aria-label="Ver baixo custo operacional"></button>
+                <button type="button" aria-label="Ver durabilidade extrema"></button>
+                <button type="button" aria-label="Ver tradição mundial"></button>
+            </div>
         </div>
     </section>
     <!-- ==============================
          SECTION 4: CONTATO 
          ============================== -->
+    <div class="section-anchor" id="concessionarias"></div>
     <section class="contato-section" id="contato">
         <div class="contato-container">
             
@@ -224,6 +312,7 @@
     </div>
     <p>Marginal sentido norte, BR-101, km 214 - Centro<br>Palhoça - SC, 88131-390.</p>
     <p class="telefone-unidade"><strong>Telefone Geral:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="telefone-unidade"><strong>Telefone da unidade:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
     <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
 </div>
 
@@ -233,7 +322,19 @@
         <h4>Joinville SC</h4>
     </div>
     <p>BR-101, nº 13230 - Glória<br>Joinville - SC, 89216-500.</p>
-    <p class="telefone-unidade"><strong>Telefone:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="telefone-unidade"><strong>Telefone Geral:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="telefone-unidade"><strong>Telefone da unidade:</strong> <a href="tel:4720181929">(47) 2018-1929</a></p>
+    <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
+</div>
+
+<div class="unidade-card">
+    <div class="unidade-header">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--azul-destaque)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <h4>Blumenau SC</h4>
+    </div>
+    <p>BR-470, 2677 - Itoupavazinha<br>Blumenau - SC, 89056-600.</p>
+    <p class="telefone-unidade"><strong>Telefone Geral:</strong> <a href="tel:4836210150">(48) 3621-0150</a></p>
+    <p class="telefone-unidade"><strong>Telefone da unidade:</strong> <a href="tel:47999276840">(47) 99927-6840</a></p>
     <p class="horario"><strong>Horário de funcionamento:</strong><br>Segunda a sexta - 08:00 às 18:00</p>
 </div>
             </div>
@@ -265,6 +366,7 @@
                                 <option value="" disabled selected>Selecione a unidade</option>
                                 <option value="Palhoça SC">Palhoça SC</option>
                                 <option value="Joinville SC">Joinville SC</option>
+                                <option value="Blumenau SC">Blumenau SC</option>
                             </select>
                         </div>
                     </div>
@@ -290,10 +392,12 @@
                            <select id="modeloSelect" required>
                                 <option value="" disabled selected>Selecione o modelo</option>
                                 <option value="Aumark S 315">Aumark S 315</option>
-                                <option value="Aumark S 715/916/1217">Aumark S 715/916/1217</option>
-                                <option value="IBlue">IBlue</option>
+                                <option value="Aumark S 715">Aumark S 715</option>
+                                <option value="Aumark S 916">Aumark S 916</option>
+                                <option value="Aumark S 1217">Aumark S 1217</option>
+                                <option value="iBlue EV">iBlue EV</option>
                                 <option value="Auman D 1722">Auman D 1722</option>
-                                <option value="Tunland">Tunland</option>
+                                <option value="Tunland EV">Tunland EV</option>
                                 <option value="eWonder">eWonder</option>
                                 <option value="eToano Pro">eToano Pro</option>
                                 <option value="eView Grand">eView Grand</option>
@@ -329,14 +433,8 @@
             </div>
         </div>
 
-       <!-- Mapas Lado a Lado (Espaçamentos iguais e Endereços Corretos) -->
-       <div class="maps-container">
-            <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=BR-101,%20km%20214%20-%20Centro,%20Palho%C3%A7a%20-%20SC,%2088131-390&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-            </div>
-            <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=BR-101,%2013230%20-%20Gl%C3%B3ria,%20Joinville%20-%20SC,%2089216-500&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-            </div>
+       <div class="contato-address-action">
+            <a href="concessionarias.html" class="btn-address-full">Ver endereço completo</a>
         </div>
     </section>
 
@@ -353,7 +451,7 @@
                 <h4>Principais Serviços</h4>
                 <ul>
                      <li><a href="novos.html">Veículos Novos</a></li>
-                    <li><a href="#seminovos">Seminovos Inspecionados</a></li>
+                    <li><a href="#cummins">Motores Cummins</a></li>
                     <li><a href="#">Peças e Acessórios</a></li>
                     <li><a href="#">Serviços e Revisão</a></li>
                 </ul>
@@ -368,10 +466,10 @@
             <div class="footer-social">
                 <h4>Redes Sociais</h4>
                 <div class="social-icons">
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/p/Someval-Foton-Caminh%C3%B5es-61557612016827/" target="_blank" rel="noopener" aria-label="Facebook Someval Foton">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://www.instagram.com/foton.someval/" target="_blank" rel="noopener" aria-label="Instagram Someval Foton">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
                 </div>
@@ -384,8 +482,8 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
     <div id="modalTelefones" class="modal-overlay">
     <div class="modal-content">
         <button class="modal-close" id="btnCloseTelefones">&times;</button>
@@ -412,3 +510,11 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+

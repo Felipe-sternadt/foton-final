@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelos 0KM | Foton</title>
-    <!-- Fontes e Estilos -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="showroom-page">
@@ -18,9 +17,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="novos.html">Novos</a></li>
-                <li><a href="index.html#seminovos">Seminovos</a></li>
                 <li><a href="index.html#servicos">Serviços</a></li>
                 <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+                <li><a href="concessionarias.html">Concessionárias</a></li>
                 <li><a href="index.html#contato">Contato</a></li>
             </ul>
             <div class="nav-buttons">
@@ -38,9 +37,9 @@
         <button class="close-sidebar" id="closeSidebar">×</button>
         <ul class="sidebar-links">
             <li><a href="novos.html">Novos</a></li>
-            <li><a href="index.html#seminovos">Seminovos</a></li>
             <li><a href="index.html#servicos">Serviços</a></li>
             <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+            <li><a href="concessionarias.html">Concessionárias</a></li>
             <li><a href="index.html#contato">Contato</a></li>
         </ul>
         <div class="sidebar-buttons">
@@ -60,17 +59,17 @@
             <aside class="filters-sidebar">
                 <div class="filter-group">
                     <h3>Modelos</h3>
-                    <label class="filter-label"><input type="radio" name="modelo" value="todos" checked> Todos (10)</label>
-                    <label class="filter-label"><input type="radio" name="modelo" value="aumark"> Aumark S (2)</label>
+                    <label class="filter-label"><input type="radio" name="modelo" value="todos" checked> Todos (12)</label>
+                    <label class="filter-label"><input type="radio" name="modelo" value="aumark"> Aumark S (4)</label>
                     <label class="filter-label"><input type="radio" name="modelo" value="auman"> Auman D (1)</label>
-                    <label class="filter-label"><input type="radio" name="modelo" value="eletricos"> Elétricos / eVans (7)</label>
+                    <label class="filter-label"><input type="radio" name="modelo" value="elétricos"> Elétricos / eVans (7)</label>
                 </div>
 
                 <div class="filter-group">
                     <h3>Tipo de Combustível</h3>
-                    <label class="filter-label"><input type="radio" name="combustivel" value="todos" checked> Todos (10)</label>
-                    <label class="filter-label"><input type="radio" name="combustivel" value="diesel"> Diesel (3)</label>
-                    <label class="filter-label"><input type="radio" name="combustivel" value="eletrico"> 100% Elétrico (7)</label>
+                    <label class="filter-label"><input type="radio" name="combustivel" value="todos" checked> Todos</label>
+                    <label class="filter-label"><input type="radio" name="combustivel" value="combustao"> Combustão</label>
+                    <label class="filter-label"><input type="radio" name="combustivel" value="eletrico"> Elétrico</label>
                 </div>
 
                 <button class="btn-reset-filter" id="btnResetFiltros">reset do filtro</button>
@@ -80,10 +79,10 @@
             <div class="showroom-grid" id="showroomGrid">
                 
                 <!-- 1. AUMARK S 315 -->
-                <div class="porsche-card" data-modelo="aumark" data-combustivel="diesel" onclick="window.location.href='aumark-s-315.html'">
+                <div class="porsche-card" data-modelo="aumark" data-combustivel="combustao" onclick="window.location.href='aumark-s-315.html'">
                     <img src="assets/modelo_1.webp" alt="Aumark S 315">
-                    <h2>Aumark S 315 (2026)</h2>
-                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Diesel</span><span class="tag">Manual</span></div>
+                    <h2>Aumark S 315</h2>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Combustão</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>3.500 kg</strong><span>PBT (Peso Bruto Total)</span></div>
                         <div class="spec-line"><strong>150 cv</strong><span>Potência do motor Cummins</span></div>
@@ -91,16 +90,16 @@
                     </div>
                     <a href="aumark-s-315.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=aumark-s-315'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-315#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-315'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 2. AUMARK S 715 -->
-                <div class="porsche-card" data-modelo="aumark" data-combustivel="diesel" onclick="window.location.href='aumark-s-715.html'">
+                <div class="porsche-card" data-modelo="aumark" data-combustivel="combustao" onclick="window.location.href='aumark-s-715.html'">
                     <img src="assets/modelo_2.webp" alt="Aumark S 715">
-                    <h2>Aumark S 715/916/1217</h2>
-                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Diesel</span><span class="tag">Manual</span></div>
+                    <h2>Aumark S 715</h2>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Combustão</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>7.000 kg</strong><span>PBT (Peso Bruto Total)</span></div>
                         <div class="spec-line"><strong>150 cv</strong><span>Potência do motor Cummins</span></div>
@@ -108,16 +107,48 @@
                     </div>
                     <a href="aumark-s-715.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=aumark-s-715'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-715#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-715'">Fazer Cotação</button>
                     </div>
                 </div>
 
+                <!-- 3. AUMARK S 916 -->
+                <div class="porsche-card" data-modelo="aumark" data-combustivel="combustao" onclick="window.location.href='aumark-s-916.html'">
+                    <img src="assets/modelo_2.webp" alt="Aumark S 916">
+                    <h2>Aumark S 916</h2>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Combustão</span></div>
+                    <div class="porsche-specs">
+                        <span>Ficha</span><strong>Em atualização</strong>
+                        <span>Motor</span><strong>Cummins</strong>
+                    </div>
+                    <a href="aumark-s-916.html" class="tech-link">Ficha técnica e versões</a>
+                    <div class="card-actions-porsche">
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-916#formCotacao'">Comprar</button>
+                        <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-916'">Fazer Cotação</button>
+                    </div>
+                </div>
+
+                <!-- 4. AUMARK S 1217 -->
+                <div class="porsche-card" data-modelo="aumark" data-combustivel="combustao" onclick="window.location.href='aumark-s-1217.html'">
+                    <img src="assets/modelo_2.webp" alt="Aumark S 1217">
+                    <h2>Aumark S 1217</h2>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Combustão</span></div>
+                    <div class="porsche-specs">
+                        <span>Ficha</span><strong>Em atualização</strong>
+                        <span>Motor</span><strong>Cummins</strong>
+                    </div>
+                    <a href="aumark-s-1217.html" class="tech-link">Ficha técnica e versões</a>
+                    <div class="card-actions-porsche">
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=aumark-s-1217#formCotacao'">Comprar</button>
+                        <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=aumark-s-1217'">Fazer Cotação</button>
+                    </div>
+                </div>
+
                 <!-- 3. AUMAN D 1722 -->
-                <div class="porsche-card" data-modelo="auman" data-combustivel="diesel" onclick="window.location.href='auman-d-1722.html'">
+                <div class="porsche-card" data-modelo="auman" data-combustivel="combustao" onclick="window.location.href='auman-d-1722.html'">
                     <img src="assets/modelo_4.webp" alt="Auman D 1722">
                     <h2>Auman D 1722</h2>
-                    <div class="porsche-tags"><span class="tag">Diesel</span><span class="tag">Pesado</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Combustão</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>16.000 kg</strong><span>PBT (Peso Bruto Total)</span></div>
                         <div class="spec-line"><strong>220 cv</strong><span>Alta potência e torque</span></div>
@@ -125,16 +156,16 @@
                     </div>
                     <a href="auman-d-1722.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=auman-d-1722'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=auman-d-1722#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=auman-d-1722'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 4. iBLUE (ELÉTRICO) -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='iblue.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='iblue.html'">
                     <img src="assets/modelo_3.webp" alt="iBlue">
                     <h2>iBlue EV</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Sustentável</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>4.500 kg</strong><span>PBT (Estimado)</span></div>
                         <div class="spec-line"><strong>156 cv</strong><span>Potência 100% elétrica</span></div>
@@ -142,33 +173,33 @@
                     </div>
                     <a href="iblue.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=iblue'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=iblue#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=iblue'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 5. TUNLAND (ELÉTRICO) -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='tunland.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='tunland.html'">
                     <img src="assets/modelo_5.webp" alt="Tunland">
                     <h2>Tunland EV</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Picape</span><span class="tag">4x4</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>1.000 kg</strong><span>Capacidade de Carga</span></div>
                         <div class="spec-line"><strong>163 cv</strong><span>Potência imediata (Torque)</span></div>
-                        <div class="spec-line"><strong>300 km</strong><span>Autonomia aproximada</span></div>
+                        <div class="spec-line"><strong>300 km</strong><span>Autonomia apróximada</span></div>
                     </div>
                     <a href="tunland.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=tunland'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=tunland#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=tunland'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 6. eWONDER -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='ewonder.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='ewonder.html'">
                     <img src="assets/modelo_6.webp" alt="eWonder">
                     <h2>eWonder</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Van</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>1.500 kg</strong><span>Capacidade de Carga</span></div>
                         <div class="spec-line"><strong>115 cv</strong><span>Motorização silenciosa</span></div>
@@ -176,16 +207,16 @@
                     </div>
                     <a href="ewonder.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=ewonder'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=ewonder#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=ewonder'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 7. eToano Pro -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='etoano-pro.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='etoano-pro.html'">
                     <img src="assets/modelo_7.webp" alt="eToano Pro">
                     <h2>eToano Pro</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Van Executiva</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>1.200 kg</strong><span>Capacidade de Carga</span></div>
                         <div class="spec-line"><strong>115 cv</strong><span>Potência</span></div>
@@ -193,16 +224,16 @@
                     </div>
                     <a href="etoano-pro.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=etoano-pro'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=etoano-pro#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=etoano-pro'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 8. eView Grand -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='eview-grand.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='eview-grand.html'">
                     <img src="assets/modelo_8.webp" alt="eView Grand">
                     <h2>eView Grand</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Utilitário</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>1.000 kg</strong><span>Capacidade de Carga</span></div>
                         <div class="spec-line"><strong>115 cv</strong><span>Potência</span></div>
@@ -210,16 +241,16 @@
                     </div>
                     <a href="eview-grand.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=eview-grand'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=eview-grand#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=eview-grand'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 9. eView Connect -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='eview-connect.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='eview-connect.html'">
                     <img src="assets/modelo_9.webp" alt="eView Connect">
                     <h2>eView Connect</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">Carga Rápida</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>1.000 kg</strong><span>Capacidade de Carga</span></div>
                         <div class="spec-line"><strong>115 cv</strong><span>Potência</span></div>
@@ -227,16 +258,16 @@
                     </div>
                     <a href="eview-connect.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=eview-connect'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=eview-connect#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=eview-connect'">Fazer Cotação</button>
                     </div>
                 </div>
 
                 <!-- 10. eAumark -->
-                <div class="porsche-card" data-modelo="eletricos" data-combustivel="eletrico" onclick="window.location.href='eaumark.html'">
+                <div class="porsche-card" data-modelo="elétricos" data-combustivel="eletrico" onclick="window.location.href='eaumark.html'">
                     <img src="assets/modelo_10.webp" alt="eAumark">
                     <h2>eAumark</h2>
-                    <div class="porsche-tags"><span class="tag novo">Elétrico</span><span class="tag">VUC</span></div>
+                    <div class="porsche-tags"><span class="tag novo">Novo</span><span class="tag">Elétrico</span></div>
                     <div class="porsche-specs">
                         <div class="spec-line"><strong>6.000 kg</strong><span>PBT (Peso Bruto Total)</span></div>
                         <div class="spec-line"><strong>156 cv</strong><span>Potência de sobra</span></div>
@@ -244,7 +275,7 @@
                     </div>
                     <a href="eaumark.html" class="tech-link">Ficha técnica e versões</a>
                     <div class="card-actions-porsche">
-                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html#formCotacao?modelo=eaumark'">Comprar</button>
+                        <button class="btn-black" onclick="event.stopPropagation(); window.location.href='index.html?modelo=eaumark#formCotacao'">Comprar</button>
                         <button class="btn-outline-black" onclick="event.stopPropagation(); window.location.href='test-drive.html?modelo=eaumark'">Fazer Cotação</button>
                     </div>
                 </div>
@@ -267,8 +298,8 @@
                 <ul>
                      <li><a href="novos.html">Veículos Novos</a></li>
                     <li><a href="index.html#seminovos">Seminovos Inspecionados</a></li>
-                    <li><a href="index.html#home">Peças e Acessórios</a></li>
-                    <li><a href="index.html#home">Serviços e Revisão</a></li>
+                    <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+                    <li><a href="index.html#servicos">Serviços e Revisão</a></li>
                 </ul>
             </div>
 
@@ -281,10 +312,10 @@
             <div class="footer-social">
                 <h4>Redes Sociais</h4>
                 <div class="social-icons">
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/p/Someval-Foton-Caminh%C3%B5es-61557612016827/" target="_blank" rel="noopener" aria-label="Facebook Someval Foton">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://www.instagram.com/foton.someval/" target="_blank" rel="noopener" aria-label="Instagram Someval Foton">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
                 </div>
@@ -299,3 +330,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

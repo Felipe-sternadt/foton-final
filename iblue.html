@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBlue EV | Foton Caminhões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="vehicle-page" style="background-color: #041954;">
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html#home"><img src="assets/logo_foton.png" alt="Foton Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+                <li><a href="concessionarias.html">Concessionárias</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <div class="nav-buttons"><a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#pecas">Peças e Acessórios</a></li>
+            <li><a href="concessionarias.html">Concessionárias</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <div class="sidebar-buttons"><a href="index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a></div>
+    </aside>
+    <section class="product-showcase">
+        <div class="showcase-top"><h1 class="showcase-watermark">iBlue</h1></div>
+        <div class="showcase-image-container"><img src="assets/modelo_3.webp" alt="iBlue EV" class="showcase-truck"></div>
+        <div class="showcase-bottom">
+            <div class="showcase-categories"><span>115 kW</span><span>Zero emissões</span><span>Bateria 81,14 kWh</span></div>
+            <h2 class="showcase-main-title">iBlue EV</h2>
+            <div class="showcase-actions">
+                <a href="index.html?modelo=iblue#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="test-drive.html?modelo=iblue" class="btn-showcase outline">Agendar Test Drive</a>
+            </div>
+            <div class="showcase-badges"><span class="badge-novo">Novo</span><span class="badge-tech">Foton</span></div>
+        </div>
+    </section>
+    <section class="aumark-specs-section">
+        <div class="specs-container">
+            <div class="specs-content">
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="115">0</span> <span class="spec-unit">kW</span></span><p class="spec-desc">Potência máxima do conjunto elétrico.</p></div>
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="300">0</span> <span class="spec-unit">Nm</span></span><p class="spec-desc">Torque máximo instantâneo.</p></div>
+                <div class="spec-item"><span class="spec-number"><span class="counter" data-target="6000">0</span> <span class="spec-unit">kg</span></span><p class="spec-desc">Peso Bruto Total.</p></div>
+            </div>
+            <div class="specs-image"><img src="assets/modelo_3.webp" alt="iBlue EV"></div>
+        </div>
+    </section>
+    <section class="gallery-section">
+        <h2 class="gallery-main-title">Detalhes do modelo.</h2>
+        <div class="gallery-layout">
+            <div class="gallery-viewer">
+                <div class="gallery-main-img"><img id="mainGalleryImg" src="assets/iblue_exterior_1.webp" alt="iBlue EV"></div>
+                <div class="gallery-thumbnails" id="galleryThumbnails">
+                    <img src="assets/iblue_exterior_1.webp" class="thumb active" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_exterior_2.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_exterior_3.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_exterior_4.webp" class="thumb" data-type="exterior" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_interior_1.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_interior_2.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_interior_3.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                    <img src="assets/iblue_interior_4.webp" class="thumb" data-type="interior" style="display: none;" onclick="changeGalleryImage(this)">
+                </div>
+            </div>
+            <div class="gallery-sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-header"><h3>Perspectiva</h3><span class="icon-minus"></span></div>
+                    <div class="sidebar-options">
+                        <button class="sidebar-btn active" onclick="filterGallery('exterior', this)">Exterior</button>
+                        <button class="sidebar-btn" onclick="filterGallery('interior', this)">Interior</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="versions-section">
+        <h2 class="versions-main-title">Ficha Técnica</h2>
+        <div class="versions-tabs"><div class="version-tab active"><img src="assets/modelo_3.webp" alt="iBlue EV"><span>FOTON<br><strong>iBlue EV</strong></span></div></div>
+                <div class="specs-accordion" id="specs-main">
+            <div class="accordion-item"><button class="accordion-header">Motor <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Modelo</span> <strong>Síncrono de imã permanente, redução simples</strong></li><li><span>Potência/máxima - Kw</span> <strong>64/115</strong></li><li><span>Torque/Máximo - Nm</span> <strong>142/300</strong></li><li><span>Norma de emissões</span> <strong>Zero emissões (100% elétrico)</strong></li><li><span>Tração</span> <strong>4x2</strong></li><li><span>Relação de redução</span> <strong>3.045</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Eixo Dianteiro <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Modelo</span> <strong>Viga "I" Aço forjado</strong></li><li><span>Capacidade-Ton</span> <strong>2,4</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Eixo Traseiro <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Modelo</span> <strong>Solda tipo integral</strong></li><li><span>Capacidade-Ton</span> <strong>4,5</strong></li><li><span>Relação</span> <strong>5.125</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Suspensão <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Dianteira</span> <strong>3 lâminas</strong></li><li><span>Traseira</span> <strong>5+2 lâminas</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Direção <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Modelo</span> <strong>Elétrica e ajustável com volante multifuncional.</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Rodas e Pneus <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Aro das rodas</span> <strong>Aço</strong></li><li><span>Pneus</span> <strong>205/75 R16</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Freios <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Freio de serviço</span> <strong>Discos nas dianteiras e tambor nas traseiras</strong></li><li><span>Tipo</span> <strong>Hidráulico com ABS + EBD + ESC, ajuste automático de folga e impulsionador de vácuo</strong></li><li><span>Freio de estacionamento</span> <strong>Acionamento com trava de tambor central</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Sistema Elétrico <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Tensão nominal</span> <strong>24V</strong></li><li><span>Bateria</span> <strong>2x (60 ah)</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Sistema Elétrico de Tração <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Tensão nominal</span> <strong>540V</strong></li><li><span>Capacidade</span> <strong>81.14Kwh</strong></li><li><span>Tipo</span> <strong>Íons de lítio com líquido de arrefecimento.</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Sistema Elétrico de Carga <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Modo de carga</span> <strong>AC/DC</strong></li><li><span>Carga OBC - Kw</span> <strong>11</strong></li><li><span>Potência Max de carga - Kw</span> <strong>81</strong></li><li><span>Soquete de carga</span> <strong>CCS tipo2</strong></li><li><span>Carga AC/Carga DC (20% - 100%) (H)</span> <strong>1.2/8</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Pesos (KG) <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Peso bruto total (PBT)</span> <strong>6000</strong></li><li><span>Peso sem carga - chassi</span> <strong>2425</strong></li><li><span>Capacidade máx de carga útil + carroceria</span> <strong>3575</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Dimensões (mm) <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Comprimento total</span> <strong>5960</strong></li><li><span>Largura máxima dianteira</span> <strong>2260</strong></li><li><span>Largura máxima traseira</span> <strong>2060</strong></li><li><span>Distância entre eixos</span> <strong>3360</strong></li><li><span>Balanço dianteiro</span> <strong>1110</strong></li><li><span>Balanço traseiro</span> <strong>1490</strong></li><li><span>Distância do solo</span> <strong>188</strong></li><li><span>Bitola dianteira</span> <strong>1590</strong></li><li><span>Bitola traseira</span> <strong>1498</strong></li><li><span>Comprimento plataforma de carga</span> <strong>4140</strong></li><li><span>Largura plataforma de carga</span> <strong>2100</strong></li><li><span>Ângulo de entrada/ ataque - graus</span> <strong>20</strong></li><li><span>Ângulo de saída - graus</span> <strong>15</strong></li><li><span>Volume de carga - m3</span> <strong>18</strong></li></ul></div></div></div>
+            <div class="accordion-item"><button class="accordion-header">Itens de Série <span class="accordion-icon"></span></button><div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list"><li><span>Itens</span> <strong>Freio auxiliar, ESP, ASR, Controle de assistência em subida, Farol automático, Farol de milha, DLR, MP3 com USB, Campainha de marcha ré, ACC, Vidros elétricos, Ar condicionado e Alarme</strong></li></ul></div></div></div>
+        </div>
+    
+        <div class="technical-download-wrapper">
+            <a class="technical-download-button" href="assets/fichas/iblue.pdf" download>Baixar ficha técnica</a>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand"><a href="index.html"><img src="assets/logo_foton.png" alt="Foton Logo" class="footer-logo"></a><p>Força que move, Eficiência que Lidera.</p></div>
+            <div class="footer-links"><h4>Principais Serviços</h4><ul><li><a href="novos.html">Veículos Novos</a></li><li><a href="index.html#servicos">Serviços e Revisão</a></li><li><a href="index.html#pecas">Peças e Acessórios</a></li><li><a href="concessionarias.html">Concessionárias</a></li></ul></div>
+            <div class="footer-quote"><h4>Pronto para acelerar?</h4><p>Garanta as melhores condições para expandir sua frota.</p><a href="index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a></div>
+            <div class="footer-social"><h4>Redes Sociais</h4><div class="social-icons"><a href="https://www.facebook.com/p/Someval-Foton-Caminh%C3%B5es-61557612016827/" target="_blank" rel="noopener" aria-label="Facebook Someval Foton"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.instagram.com/foton.someval/" target="_blank" rel="noopener" aria-label="Instagram Someval Foton"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>Copyright 2026 - Someval Foton. Todos os direitos reservados.</p><p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p></div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
