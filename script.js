@@ -901,5 +901,32 @@ if (document.readyState === 'loading') {
     initFotonCumminsSlider();
 }
 
+function initDeferredDealerMaps() {
+    const deferredMaps = document.querySelectorAll('.dealer-map-deferred');
+
+    deferredMaps.forEach((map) => {
+        const iframe = map.querySelector('iframe[data-src]');
+        const loadButton = map.querySelector('.dealer-map-load');
+
+        if (!iframe || !loadButton) return;
+
+        const loadMap = () => {
+            if (!iframe.src) {
+                iframe.src = iframe.dataset.src;
+            }
+
+            map.classList.add('is-loaded');
+        };
+
+        loadButton.addEventListener('click', loadMap);
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDeferredDealerMaps, { once: true });
+} else {
+    initDeferredDealerMaps();
+}
+
 
 
