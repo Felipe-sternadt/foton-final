@@ -712,19 +712,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const tdName = document.getElementById('tdCarName');
 
     if (tdSelect && tdImg && tdName) {
+        const assetBase = window.location.pathname.includes('/pages/') || window.location.pathname.includes('/models/')
+            ? '../assets/images/'
+            : 'assets/images/';
+
         const imagensModelos = {
-            "Aumark S 315": "assets/images/modelo_1.webp",
-            "Aumark S 715": "assets/images/modelo_2.webp",
-            "Aumark S 916": "assets/images/modelo_2.webp",
-            "Aumark S 1217": "assets/images/modelo_2.webp",
-            "iBlue EV": "assets/images/modelo_3.webp",
-            "Auman D 1722": "assets/images/modelo_4.webp",
-            "Tunland EV": "assets/images/modelo_5.webp",
-            "eWonder": "assets/images/modelo_6.webp",
-            "eToano Pro": "assets/images/modelo_7.webp",
-            "eView Grand": "assets/images/modelo_8.webp",
-            "eView Connect": "assets/images/modelo_9.webp",
-            "eAumark": "assets/images/modelo_10.webp"
+            "Aumark S 315": `${assetBase}modelo_1.webp`,
+            "Aumark S 715": `${assetBase}modelo_2.webp`,
+            "Aumark S 916": `${assetBase}modelo_2.webp`,
+            "Aumark S 1217": `${assetBase}modelo_2.webp`,
+            "iBlue EV": `${assetBase}modelo_3.webp`,
+            "Auman D 1722": `${assetBase}modelo_4.webp`,
+            "Tunland EV": `${assetBase}modelo_5.webp`,
+            "eWonder": `${assetBase}modelo_6.webp`,
+            "eToano Pro": `${assetBase}modelo_7.webp`,
+            "eView Grand": `${assetBase}modelo_8.webp`,
+            "eView Connect": `${assetBase}modelo_9.webp`,
+            "eAumark": `${assetBase}modelo_10.webp`
         };
 
         function atualizarCarro() {
