@@ -39,11 +39,11 @@
         <div class="showcase-top"><h1 class="showcase-watermark">eAumark</h1></div>
         <div class="showcase-image-container"><img src="../assets/images/modelo_10.webp" alt="eAumark" class="showcase-truck"></div>
         <div class="showcase-bottom">
-            <div class="showcase-categories"><span>156 cv</span><span>100% elétrico</span><span>Ficha técnica</span></div>
+            <div class="showcase-categories"><span>6T a 12T L</span><span>5 versões</span><span>100% elétrico</span></div>
             <h2 class="showcase-main-title">eAumark</h2>
             <div class="showcase-actions">
-                <a href="../index.html?modelo=eaumark#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
-                <a href="../pages/test-drive.html?modelo=eaumark" class="btn-showcase outline">Agendar Test Drive</a>
+                <a href="../index.html?modelo=eaumark-6t#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="../pages/test-drive.html?modelo=eaumark-6t" class="btn-showcase outline">Agendar Test Drive</a>
             </div>
             <div class="showcase-badges"><span class="badge-novo">Novo</span><span class="badge-tech">Foton</span></div>
         </div>
@@ -87,20 +87,60 @@
     </section>
     <section class="versions-section">
         <h2 class="versions-main-title">Ficha Técnica</h2>
-        <div class="versions-tabs"><div class="version-tab active"><img src="../assets/images/modelo_10.webp" alt="eAumark"><span>FOTON<br><strong>eAumark</strong></span></div></div>
-        <div class="specs-accordion" id="specs-main">
+        <div class="versions-tabs">
+            <div class="version-tab active" onclick="selectVersion('6t', this)"><img src="../assets/images/modelo_10.webp" alt="eAumark 6T"><span>FOTON<br><strong>6T</strong></span></div>
+            <div class="version-tab" onclick="selectVersion('9t', this)"><img src="../assets/images/modelo_10.webp" alt="eAumark 9T"><span>FOTON<br><strong>9T</strong></span></div>
+            <div class="version-tab" onclick="selectVersion('9t-l', this)"><img src="../assets/images/modelo_10.webp" alt="eAumark 9T L"><span>FOTON<br><strong>9T L</strong></span></div>
+            <div class="version-tab" onclick="selectVersion('12t', this)"><img src="../assets/images/modelo_10.webp" alt="eAumark 12T"><span>FOTON<br><strong>12T</strong></span></div>
+            <div class="version-tab" onclick="selectVersion('12t-l', this)"><img src="../assets/images/modelo_10.webp" alt="eAumark 12T L"><span>FOTON<br><strong>12T L</strong></span></div>
+        </div>
+        <div class="specs-accordion" id="specs-6t">
             <div class="accordion-item">
-                <button class="accordion-header">Resumo do modelo <span class="accordion-icon"></span></button>
+                <button class="accordion-header">eAumark 6T <span class="accordion-icon"></span></button>
                 <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
-                    <li><span>Modelo</span> <strong>eAumark</strong></li>
-                    <li><span>Categoria</span> <strong>VUC elétrico</strong></li>
-                    <li><span>Status</span> <strong>Ficha detalhada em atualização</strong></li>
+                    <li><span>Versão</span> <strong>6T</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                    <li><span>Perfil</span> <strong>Distribuição urbana leve com baixo custo operacional.</strong></li>
                 </ul></div></div>
             </div>
+        </div>
+        <div class="specs-accordion" id="specs-9t" style="display: none;">
             <div class="accordion-item">
-                <button class="accordion-header">Observações <span class="accordion-icon"></span></button>
+                <button class="accordion-header">eAumark 9T <span class="accordion-icon"></span></button>
                 <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
-                    <li><span>Conteúdo técnico</span> <strong>As descrições e dados completos serão inseridos na próxima etapa.</strong></li>
+                    <li><span>Versão</span> <strong>9T</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                    <li><span>Perfil</span> <strong>Mais capacidade para rotas urbanas e entregas recorrentes.</strong></li>
+                </ul></div></div>
+            </div>
+        </div>
+        <div class="specs-accordion" id="specs-9t-l" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">eAumark 9T L <span class="accordion-icon"></span></button>
+                <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                    <li><span>Versão</span> <strong>9T L</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                    <li><span>Perfil</span> <strong>Entre-eixos alongado para maior aproveitamento operacional.</strong></li>
+                </ul></div></div>
+            </div>
+        </div>
+        <div class="specs-accordion" id="specs-12t" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">eAumark 12T <span class="accordion-icon"></span></button>
+                <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                    <li><span>Versão</span> <strong>12T</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                    <li><span>Perfil</span> <strong>Operações com maior demanda de carga e eficiência energética.</strong></li>
+                </ul></div></div>
+            </div>
+        </div>
+        <div class="specs-accordion" id="specs-12t-l" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">eAumark 12T L <span class="accordion-icon"></span></button>
+                <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                    <li><span>Versão</span> <strong>12T L</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                    <li><span>Perfil</span> <strong>Configuração longa para distribuição urbana de alto volume.</strong></li>
                 </ul></div></div>
             </div>
         </div>

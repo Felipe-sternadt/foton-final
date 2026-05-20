@@ -1,6 +1,6 @@
 ﻿# Someval Foton
 
-Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaScript vanilla. O projeto esta preparado para publicacao direta no GitHub Pages, com as paginas HTML na raiz e os arquivos de suporte organizados dentro de `assets`.
+Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaScript vanilla. O projeto esta preparado para publicacao direta no GitHub Pages, com a home na raiz, paginas institucionais em `pages/`, paginas de modelos em `models/` e arquivos de suporte em `assets/`.
 
 ## Estrutura
 
@@ -17,7 +17,6 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 |   +-- aumark-s-916.html
 |   +-- aumark-s-1217.html
 |   +-- auman-d-1722.html
-|   +-- iblue.html
 |   +-- tunland.html
 |   +-- ewonder.html
 |   +-- etoano-pro.html
@@ -44,6 +43,25 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 - `pages/concessionarias.html`: unidades de Palhoca, Joinville e Blumenau.
 - `pages/test-drive.html`: formulario de agendamento de test drive.
 - `models/*.html`: paginas de modelo com galerias, dados tecnicos, fichas tecnicas e chamadas para cotacao/test drive.
+
+## Linha Atual de Modelos
+
+### Combustao
+
+- Aumark S 315
+- Aumark S 715
+- Aumark S 916
+- Aumark S 1217
+- Auman D 1722
+
+### Eletricos
+
+- Tunland EV
+- eWonder
+- eView Connect
+- eView Grand: Teto Baixo 6,8 m3 e Teto Medio 7,9 m3
+- eToano Pro: PRO M 10,4 m3 e PRO H 12,2 m3
+- eAumark: 6T, 9T, 9T L, 12T e 12T L
 
 ## Organizacao de Assets
 
@@ -103,7 +121,6 @@ Para novas imagens e fichas:
 
 Estas paginas ja possuem botao de ficha tecnica preparado, mas os PDFs ainda precisam ser adicionados em `assets/fichas`:
 
-- `models/iblue.html`: `assets/fichas/iblue.pdf`
 - `models/eaumark.html`: `assets/fichas/eaumark.pdf`
 - `models/etoano-pro.html`: `assets/fichas/etoano-pro.pdf`
 - `models/eview-grand.html`: `assets/fichas/eview-grand.pdf`

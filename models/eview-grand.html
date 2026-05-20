@@ -39,11 +39,11 @@
         <div class="showcase-top"><h1 class="showcase-watermark">eView</h1></div>
         <div class="showcase-image-container"><img src="../assets/images/modelo_8.webp" alt="eView Grand" class="showcase-truck"></div>
         <div class="showcase-bottom">
-            <div class="showcase-categories"><span>115 cv</span><span>100% elétrico</span><span>Ficha técnica</span></div>
+            <div class="showcase-categories"><span>Teto baixo: 6,8 m³</span><span>Teto médio: 7,9 m³</span><span>100% elétrico</span></div>
             <h2 class="showcase-main-title">eView Grand</h2>
             <div class="showcase-actions">
-                <a href="../index.html?modelo=eview-grand#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
-                <a href="../pages/test-drive.html?modelo=eview-grand" class="btn-showcase outline">Agendar Test Drive</a>
+                <a href="../index.html?modelo=eview-grand-teto-baixo#formCotacao" class="btn-showcase solid">SOLICITAR COTAÇÃO</a>
+                <a href="../pages/test-drive.html?modelo=eview-grand-teto-baixo" class="btn-showcase outline">Agendar Test Drive</a>
             </div>
             <div class="showcase-badges"><span class="badge-novo">Novo</span><span class="badge-tech">Foton</span></div>
         </div>
@@ -87,20 +87,39 @@
     </section>
     <section class="versions-section">
         <h2 class="versions-main-title">Ficha Técnica</h2>
-        <div class="versions-tabs"><div class="version-tab active"><img src="../assets/images/modelo_8.webp" alt="eView Grand"><span>FOTON<br><strong>eView Grand</strong></span></div></div>
-        <div class="specs-accordion" id="specs-main">
+        <div class="versions-tabs">
+            <div class="version-tab active" onclick="selectVersion('teto-baixo', this)"><img src="../assets/images/modelo_8.webp" alt="eView Grand Teto Baixo"><span>FOTON<br><strong>Teto Baixo</strong></span></div>
+            <div class="version-tab" onclick="selectVersion('teto-medio', this)"><img src="../assets/images/modelo_8.webp" alt="eView Grand Teto Médio"><span>FOTON<br><strong>Teto Médio</strong></span></div>
+        </div>
+        <div class="specs-accordion" id="specs-teto-baixo">
             <div class="accordion-item">
-                <button class="accordion-header">Resumo do modelo <span class="accordion-icon"></span></button>
+                <button class="accordion-header">eView Grand Teto Baixo <span class="accordion-icon"></span></button>
                 <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
-                    <li><span>Modelo</span> <strong>eView Grand</strong></li>
-                    <li><span>Categoria</span> <strong>Utilitário elétrico</strong></li>
-                    <li><span>Status</span> <strong>Ficha detalhada em atualização</strong></li>
+                    <li><span>Versão</span> <strong>Teto baixo</strong></li>
+                    <li><span>Volume de carga</span> <strong>6,8 m³</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
                 </ul></div></div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header">Observações <span class="accordion-icon"></span></button>
+                <button class="accordion-header">Aplicação <span class="accordion-icon"></span></button>
                 <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
-                    <li><span>Conteúdo técnico</span> <strong>As descrições e dados completos serão inseridos na próxima etapa.</strong></li>
+                    <li><span>Perfil</span> <strong>Mobilidade executiva e operação urbana com acesso facilitado.</strong></li>
+                </ul></div></div>
+            </div>
+        </div>
+        <div class="specs-accordion" id="specs-teto-medio" style="display: none;">
+            <div class="accordion-item">
+                <button class="accordion-header">eView Grand Teto Médio <span class="accordion-icon"></span></button>
+                <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                    <li><span>Versão</span> <strong>Teto médio</strong></li>
+                    <li><span>Volume de carga</span> <strong>7,9 m³</strong></li>
+                    <li><span>Propulsão</span> <strong>100% elétrica</strong></li>
+                </ul></div></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Aplicação <span class="accordion-icon"></span></button>
+                <div class="accordion-content"><div class="accordion-inner"><ul class="spec-details-list">
+                    <li><span>Perfil</span> <strong>Maior capacidade interna para transporte profissional e rotas urbanas.</strong></li>
                 </ul></div></div>
             </div>
         </div>

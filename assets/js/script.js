@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (pularAnimacoes) {
         document.body.classList.add('disable-animations');
-        document.querySelectorAll('.models-section, .seminovos-section').forEach(sec => {
+        document.querySelectorAll('.models-section, .cummins-section').forEach(sec => {
             sec.classList.add('is-visible');
         });
     }
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.3 }); 
 
-    document.querySelectorAll('.models-section, .seminovos-section, .cummins-section, .dealers-section').forEach(section => {
+    document.querySelectorAll('.models-section, .cummins-section, .dealers-section').forEach(section => {
         sectionObserver.observe(section);
     });
 
@@ -683,14 +683,22 @@ document.addEventListener('DOMContentLoaded', () => {
         'aumark-s-715': 'Aumark S 715',
         'aumark-s-916': 'Aumark S 916',
         'aumark-s-1217': 'Aumark S 1217',
-        'iblue': 'iBlue EV',
         'auman-d-1722': 'Auman D 1722',
         'tunland': 'Tunland EV',
         'ewonder': 'eWonder',
-        'etoano-pro': 'eToano Pro',
-        'eview-grand': 'eView Grand',
+        'etoano-pro': 'eToano Pro M',
+        'etoano-pro-m': 'eToano Pro M',
+        'etoano-pro-h': 'eToano Pro H',
+        'eview-grand': 'eView Grand Teto Baixo',
+        'eview-grand-teto-baixo': 'eView Grand Teto Baixo',
+        'eview-grand-teto-medio': 'eView Grand Teto Médio',
         'eview-connect': 'eView Connect',
-        'eaumark': 'eAumark'
+        'eaumark': 'eAumark 6T',
+        'eaumark-6t': 'eAumark 6T',
+        'eaumark-9t': 'eAumark 9T',
+        'eaumark-9t-l': 'eAumark 9T L',
+        'eaumark-12t': 'eAumark 12T',
+        'eaumark-12t-l': 'eAumark 12T L'
     };
 
     // Auto-preenche o formulário de COTAÇÃO (se existir na página)
@@ -721,14 +729,22 @@ document.addEventListener('DOMContentLoaded', () => {
             "Aumark S 715": `${assetBase}modelo_2.webp`,
             "Aumark S 916": `${assetBase}modelo_2.webp`,
             "Aumark S 1217": `${assetBase}modelo_2.webp`,
-            "iBlue EV": `${assetBase}modelo_3.webp`,
             "Auman D 1722": `${assetBase}modelo_4.webp`,
             "Tunland EV": `${assetBase}modelo_5.webp`,
             "eWonder": `${assetBase}modelo_6.webp`,
             "eToano Pro": `${assetBase}modelo_7.webp`,
+            "eToano Pro M": `${assetBase}modelo_7.webp`,
+            "eToano Pro H": `${assetBase}modelo_7.webp`,
             "eView Grand": `${assetBase}modelo_8.webp`,
+            "eView Grand Teto Baixo": `${assetBase}modelo_8.webp`,
+            "eView Grand Teto Médio": `${assetBase}modelo_8.webp`,
             "eView Connect": `${assetBase}modelo_9.webp`,
-            "eAumark": `${assetBase}modelo_10.webp`
+            "eAumark": `${assetBase}modelo_10.webp`,
+            "eAumark 6T": `${assetBase}modelo_10.webp`,
+            "eAumark 9T": `${assetBase}modelo_10.webp`,
+            "eAumark 9T L": `${assetBase}modelo_10.webp`,
+            "eAumark 12T": `${assetBase}modelo_10.webp`,
+            "eAumark 12T L": `${assetBase}modelo_10.webp`
         };
 
         function atualizarCarro() {
