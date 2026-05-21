@@ -1,4 +1,4 @@
-﻿/* =======================================================
+/* =======================================================
    FUNÇÕES GLOBAIS DA GALERIA DO AUMARK S 315
    ======================================================= */
 function changeGalleryImage(thumbnail) {
@@ -679,12 +679,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const modeloSelecionado = urlParams.get('modelo');
 
     const mapaModelosGeral = {
-        'aumark-s-315': 'Aumark S 315',
+        'aumark-s-315': 'Aumark S 315 MT',
+        'aumark-s-315-mt': 'Aumark S 315 MT',
+        'aumark-s-315-amt': 'Aumark S 315 AMT',
         'aumark-s-715': 'Aumark S 715',
         'aumark-s-916': 'Aumark S 916',
         'aumark-s-1217': 'Aumark S 1217',
+        'aumark-s-1217-l': 'Aumark S 1217 L',
         'auman-d-1722': 'Auman D 1722',
-        'tunland': 'Tunland EV',
+        'tunland': 'Tunland V7 HEV',
+        'tunland-v7': 'Tunland V7 HEV',
+        'tunland-v9': 'Tunland V9 HEV',
         'ewonder': 'eWonder',
         'etoano-pro': 'eToano Pro M',
         'etoano-pro-m': 'eToano Pro M',
@@ -725,19 +730,22 @@ document.addEventListener('DOMContentLoaded', () => {
             : 'assets/images/';
 
         const imagensModelos = {
-            "Aumark S 315": `${assetBase}modelo_1.webp`,
+            "Aumark S 315 MT": `${assetBase}modelo_1.webp`,
+            "Aumark S 315 AMT": `${assetBase}modelo_1.webp`,
             "Aumark S 715": `${assetBase}modelo_2.webp`,
             "Aumark S 916": `${assetBase}modelo_2.webp`,
             "Aumark S 1217": `${assetBase}modelo_2.webp`,
+            "Aumark S 1217 L": `${assetBase}modelo_2.webp`,
             "Auman D 1722": `${assetBase}modelo_4.webp`,
-            "Tunland EV": `${assetBase}modelo_5.webp`,
+            "Tunland V7 HEV": `${assetBase}tunland_v7.webp`,
+            "Tunland V9 HEV": `${assetBase}tunland_v9.webp`,
             "eWonder": `${assetBase}modelo_6.webp`,
             "eToano Pro": `${assetBase}modelo_7.webp`,
             "eToano Pro M": `${assetBase}modelo_7.webp`,
             "eToano Pro H": `${assetBase}modelo_7.webp`,
-            "eView Grand": `${assetBase}modelo_8.webp`,
-            "eView Grand Teto Baixo": `${assetBase}modelo_8.webp`,
-            "eView Grand Teto Médio": `${assetBase}modelo_8.webp`,
+            "eView Grand": `${assetBase}modelo_8.png`,
+            "eView Grand Teto Baixo": `${assetBase}modelo_8.png`,
+            "eView Grand Teto Médio": `${assetBase}modelo_8.png`,
             "eView Connect": `${assetBase}modelo_9.webp`,
             "eAumark": `${assetBase}modelo_10.webp`,
             "eAumark 6T": `${assetBase}modelo_10.webp`,
@@ -784,6 +792,7 @@ if (inputData) {
     const filterRadios = document.querySelectorAll('.filters-sidebar input[type="radio"]');
     const porscheCards = document.querySelectorAll('.porsche-card');
     const btnResetFiltros = document.getElementById('btnResetFiltros');
+    const showroomGrid = document.getElementById('showroomGrid');
 
     if (filterRadios.length > 0 && porscheCards.length > 0) {
         
@@ -792,6 +801,8 @@ if (inputData) {
             // Pega o valor dos radios marcados. Se nenhum estiver, usa 'todos'
             const modeloSelecionado = document.querySelector('input[name="modelo"]:checked')?.value || 'todos';
             const combustivelSelecionado = document.querySelector('input[name="combustivel"]:checked')?.value || 'todos';
+
+            let visibleCards = 0;
 
             porscheCards.forEach(card => {
                 const cardModelo = card.getAttribute('data-modelo');
@@ -803,10 +814,19 @@ if (inputData) {
 
                 if (matchModelo && matchCombustivel) {
                     card.style.display = 'flex'; // Mostra o card
+                    card.classList.remove('is-filter-hidden');
+                    visibleCards += 1;
                 } else {
                     card.style.display = 'none'; // Esconde o card
+                    card.classList.add('is-filter-hidden');
                 }
             });
+
+            if (showroomGrid) {
+                showroomGrid.dataset.visibleCards = String(visibleCards);
+                showroomGrid.classList.toggle('is-filtered', modeloSelecionado !== 'todos' || combustivelSelecionado !== 'todos');
+                showroomGrid.classList.toggle('has-few-cards', visibleCards > 0 && visibleCards <= 2);
+            }
         }
 
 /// Adiciona um "ouvidor" para cada clique nos botões de filtro
@@ -815,9 +835,9 @@ if (inputData) {
                 aplicarFiltros(); // Filtra os caminhões
                 
                 // Faz a tela subir suavemente para o topo
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+                document.querySelector('.showroom-header')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             });
         });
@@ -830,9 +850,9 @@ if (inputData) {
                 aplicarFiltros(); // Reseta os caminhões
                 
                 // Também faz a tela subir ao resetar
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+                document.querySelector('.showroom-header')?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             });
         }

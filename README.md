@@ -1,4 +1,4 @@
-﻿# Someval Foton
+# Someval Foton
 
 Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaScript vanilla. O projeto esta preparado para publicacao direta no GitHub Pages, com a home na raiz, paginas institucionais em `pages/`, paginas de modelos em `models/` e arquivos de suporte em `assets/`.
 
@@ -9,6 +9,7 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 +-- index.html
 +-- pages/
 |   +-- novos.html
+|   +-- servicos.html
 |   +-- concessionarias.html
 |   +-- test-drive.html
 +-- models/
@@ -18,6 +19,8 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 |   +-- aumark-s-1217.html
 |   +-- auman-d-1722.html
 |   +-- tunland.html
+|   +-- tunland-v7.html
+|   +-- tunland-v9.html
 |   +-- ewonder.html
 |   +-- etoano-pro.html
 |   +-- eview-grand.html
@@ -40,6 +43,7 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 
 - `index.html`: home com hero, modelos 0 km, motores Cummins, concessionarias e contato.
 - `pages/novos.html`: catalogo filtravel dos modelos.
+- `pages/servicos.html`: pagina de agendamento de servicos, revisao e pos-venda.
 - `pages/concessionarias.html`: unidades de Palhoca, Joinville e Blumenau.
 - `pages/test-drive.html`: formulario de agendamento de test drive.
 - `models/*.html`: paginas de modelo com galerias, dados tecnicos, fichas tecnicas e chamadas para cotacao/test drive.
@@ -56,12 +60,16 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 
 ### Eletricos
 
-- Tunland EV
 - eWonder
 - eView Connect
 - eView Grand: Teto Baixo 6,8 m3 e Teto Medio 7,9 m3
 - eToano Pro: PRO M 10,4 m3 e PRO H 12,2 m3
 - eAumark: 6T, 9T, 9T L, 12T e 12T L
+
+### Hibridos
+
+- Tunland V7 HEV
+- Tunland V9 HEV
 
 ## Organizacao de Assets
 

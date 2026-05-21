@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços e Revisão | Someval Foton</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="services-page">
+
+    <header class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html#home">
+                    <img src="../assets/images/logo_foton.png" alt="Foton Logo">
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="novos.html">Novos</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="pecas-acessorios.html">Peças e Acessórios</a></li>
+                <li><a href="concessionarias.html">Concessionárias</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="../index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">&times;</button>
+
+        <ul class="sidebar-links">
+            <li><a href="novos.html">Novos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="pecas-acessorios.html">Peças e Acessórios</a></li>
+            <li><a href="concessionarias.html">Concessionárias</a></li>
+            <li><a href="../index.html#contato">Contato</a></li>
+        </ul>
+
+        <div class="sidebar-buttons">
+            <a href="../index.html#formCotacao" class="btn-nav">SOLICITE COTAÇÃO</a>
+        </div>
+    </aside>
+
+    <main>
+        <section class="services-form-section" aria-label="Formulário de serviços">
+            <div class="services-form-grid">
+                <div class="services-form-intro">
+                    <span>Atendimento técnico</span>
+                    <h1>Agende seu serviço</h1>
+                    <p>Preencha os dados para que nossa equipe entre em contato e organize o atendimento na unidade mais adequada.</p>
+
+                    <div class="services-proof-list">
+                        <div>
+                            <strong>Revisão preventiva</strong>
+                            <small>Inspeção completa para preservar desempenho, segurança e confiabilidade.</small>
+                        </div>
+                        <div>
+                            <strong>Peças genuínas</strong>
+                            <small>Componentes homologados para manter o padrão técnico Foton.</small>
+                        </div>
+                        <div>
+                            <strong>Equipe especializada</strong>
+                            <small>Técnicos preparados para atendimento de caminhões, vans e picapes.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contato-form-wrapper services-form-wrapper" id="servicosForm">
+                    <form class="contato-form">
+                        <h3 class="form-title">Solicitar atendimento</h3>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Nome *</label>
+                                <input type="text" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Email *</label>
+                                <input type="email" placeholder="Seu email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Telefone *</label>
+                                <input type="tel" placeholder="(00) 00000-0000" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Unidade *</label>
+                                <select required>
+                                    <option value="" disabled selected>Selecione a unidade</option>
+                                    <option value="Palhoça SC">Palhoça SC</option>
+                                    <option value="Joinville SC">Joinville SC</option>
+                                    <option value="Blumenau SC">Blumenau SC</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Estado *</label>
+                                <select id="estadoSelect" required>
+                                    <option value="" disabled selected>Carregando estados...</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Cidade *</label>
+                                <select id="cidadeSelect" required disabled>
+                                    <option value="" disabled selected>Selecione o estado primeiro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label>Modelo *</label>
+                                <select id="modeloSelect" required>
+                                    <option value="" disabled selected>Selecione o modelo</option>
+                                <option value="Aumark S 315 MT">Aumark S 315 MT</option>
+                                <option value="Aumark S 315 AMT">Aumark S 315 AMT</option>
+                                <option value="Aumark S 715">Aumark S 715</option>
+                                <option value="Aumark S 916">Aumark S 916</option>
+                                <option value="Aumark S 1217">Aumark S 1217</option>
+                                <option value="Aumark S 1217 L">Aumark S 1217 L</option>
+                                <option value="Auman D 1722">Auman D 1722</option>
+                                <option value="Tunland V7 HEV">Tunland V7 HEV</option>
+                                <option value="Tunland V9 HEV">Tunland V9 HEV</option>
+                                <option value="eWonder">eWonder</option>
+                                <option value="eView Connect">eView Connect</option>
+                                <option value="eView Grand Teto Baixo">eView Grand Teto Baixo</option>
+                                <option value="eView Grand Teto Médio">eView Grand Teto Médio</option>
+                                <option value="eToano Pro M">eToano Pro M</option>
+                                <option value="eToano Pro H">eToano Pro H</option>
+                                <option value="eAumark 6T">eAumark 6T</option>
+                                <option value="eAumark 9T">eAumark 9T</option>
+                                <option value="eAumark 9T L">eAumark 9T L</option>
+                                <option value="eAumark 12T">eAumark 12T</option>
+                                <option value="eAumark 12T L">eAumark 12T L</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Departamento *</label>
+                                <select required>
+                                    <option value="Serviços" selected>Serviços</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Serviço *</label>
+                            <select id="servicoSelect" required>
+                                <option value="" disabled selected>Selecione o serviço</option>
+                                <option value="Revisão">Revisão</option>
+                                <option value="Manutenção preventiva">Manutenção preventiva</option>
+                                <option value="Diagnóstico eletrônico">Diagnóstico eletrônico</option>
+                                <option value="Peças e acessórios">Peças e acessórios</option>
+                                <option value="Garantia">Garantia</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Mensagem *</label>
+                            <textarea placeholder="Especifique o que você precisa..." rows="4" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">AGENDAR SERVIÇO</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-review-section" aria-label="Revisão Foton">
+            <div class="services-review-grid">
+                <div class="services-review-media">
+                    <img src="../assets/images/servicos.png" alt="Serviço de revisão para caminhões Foton">
+                </div>
+
+                <div class="services-review-copy">
+                    <span>Serviço especializado</span>
+                    <h2>Revisão</h2>
+                    <p>Nosso serviço especializado de revisão para caminhões Foton é projetado para garantir a máxima performance e durabilidade do seu veículo. Com uma equipe de técnicos altamente qualificados e peças genuínas, realizamos uma inspeção completa e minuciosa, abordando todos os aspectos essenciais, desde o motor até o sistema de freios e a eletrônica. Nossa abordagem detalhada e cuidadosa assegura que seu caminhão esteja sempre em excelentes condições, proporcionando segurança e eficiência nas estradas. Confie na qualidade e experiência Foton para manter seu caminhão sempre pronto para qualquer desafio.</p>
+                    <button class="btn-service-review" type="button" onclick="document.getElementById('servicoSelect').value='Revisão'; document.getElementById('servicosForm').scrollIntoView({ behavior: 'smooth', block: 'start' });">
+                        Agendar revisão
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="../index.html">
+                    <img src="../assets/images/logo_foton.png" alt="Foton Logo" class="footer-logo">
+                </a>
+                <p>Força que move, Eficiência que Lidera.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Principais Serviços</h4>
+                <ul>
+                    <li><a href="novos.html">Veículos Novos</a></li>
+                    <li><a href="../index.html#cummins">Motores Cummins</a></li>
+                    <li><a href="pecas-acessorios.html">Peças e Acessórios</a></li>
+                    <li><a href="servicos.html">Serviços e Revisão</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-quote">
+                <h4>Pronto para acelerar?</h4>
+                <p>Garanta as melhores condições para expandir sua frota.</p>
+                <a href="../index.html#formCotacao" class="btn-footer-quote">Solicite Cotação</a>
+            </div>
+
+            <div class="footer-social">
+                <h4>Redes Sociais</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Someval-Foton-Caminh%C3%B5es-61557612016827/" target="_blank" rel="noopener" aria-label="Facebook Someval Foton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/foton.someval/" target="_blank" rel="noopener" aria-label="Instagram Someval Foton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Copyright 2026 - Someval Foton. Todos os direitos reservados.</p>
+            <p class="watermark">Desenvolvido por <span class="dev-name">Felipe Sternadt</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
