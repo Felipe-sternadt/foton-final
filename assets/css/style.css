@@ -6654,6 +6654,71 @@ body.vehicle-page .specs-content .spec-unit {
     min-height: 112px;
 }
 
+.services-page .services-form-wrapper {
+    align-self: start;
+}
+
+.services-page .services-form-wrapper .contato-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 16px;
+}
+
+.services-page .services-form-wrapper .form-title,
+.services-page .services-form-wrapper .full-width,
+.services-page .services-form-wrapper .btn-submit {
+    grid-column: 1 / -1;
+}
+
+.services-page .services-form-wrapper .form-title {
+    margin-bottom: 2px;
+}
+
+.services-page .services-form-wrapper .form-row {
+    display: contents;
+    margin: 0;
+}
+
+.services-page .services-form-wrapper .input-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.services-page .services-form-wrapper label {
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+}
+
+.services-page .services-form-wrapper input,
+.services-page .services-form-wrapper select,
+.services-page .services-form-wrapper textarea {
+    min-height: 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 0.92rem;
+}
+
+.services-page .services-form-wrapper textarea {
+    min-height: 86px;
+    height: 86px;
+    resize: vertical;
+}
+
+.services-page .services-form-wrapper .btn-submit {
+    margin-top: 4px;
+    min-height: 52px;
+}
+
+.parts-page .services-form-wrapper .contato-form {
+    row-gap: 17px;
+}
+
+.parts-page .services-form-wrapper textarea {
+    min-height: 100px;
+    height: 100px;
+}
+
 .services-review-section {
     padding: 48px 24px 110px;
 }
@@ -6755,6 +6820,10 @@ body.vehicle-page .specs-content .spec-unit {
         order: 1;
         padding-bottom: 0;
     }
+
+    .services-page .services-form-wrapper .contato-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 640px) {
@@ -6772,14 +6841,23 @@ body.vehicle-page .specs-content .spec-unit {
         padding: 22px 16px !important;
     }
 
+    .services-page .services-form-wrapper .contato-form {
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+    }
+
     .services-page .contato-form .form-row {
-        flex-direction: column !important;
-        gap: 0 !important;
-        margin-bottom: 0 !important;
+        display: contents !important;
     }
 
     .services-page .contato-form .input-group {
-        margin-bottom: 16px;
+        margin-bottom: 0;
+    }
+
+    .services-page .services-form-wrapper textarea,
+    .parts-page .services-form-wrapper textarea {
+        min-height: 92px;
+        height: 92px;
     }
 
     .services-review-media img {
