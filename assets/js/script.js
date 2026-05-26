@@ -687,6 +687,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'aumark-s-1217': 'Aumark S 1217',
         'aumark-s-1217-l': 'Aumark S 1217 L',
         'auman-d-1722': 'Auman D 1722',
+        'auman-d-1830': 'Auman D 1830',
+        'auman-d-2632': 'Auman D 2632',
+        'auman-d-2632-l': 'Auman D 2632 L',
         'tunland': 'Tunland V7 HEV',
         'tunland-v7': 'Tunland V7 HEV',
         'tunland-v9': 'Tunland V9 HEV',
@@ -737,6 +740,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "Aumark S 1217": `${assetBase}modelo_2.webp`,
             "Aumark S 1217 L": `${assetBase}modelo_2.webp`,
             "Auman D 1722": `${assetBase}modelo_4.webp`,
+            "Auman D 1830": `${assetBase}modelo_11.webp`,
+            "Auman D 2632": `${assetBase}modelo_12.webp`,
+            "Auman D 2632 L": `${assetBase}modelo_12.webp`,
             "Tunland V7 HEV": `${assetBase}tunland_v7.webp`,
             "Tunland V9 HEV": `${assetBase}tunland_v9.webp`,
             "eWonder": `${assetBase}modelo_6.webp`,
@@ -1009,5 +1015,91 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDeferredDealerMaps, { once: true });
 } else {
     initDeferredDealerMaps();
+}
+
+/* =======================================================
+   AUTORIZACAO DE COOKIES PARA MONITORAMENTO
+   ======================================================= */
+function initCookieConsent() {
+    const storageKey = 'foton_cookies_accepted_v1';
+    let hasConsent = false;
+
+    try {
+        hasConsent = localStorage.getItem(storageKey) === 'true';
+    } catch (error) {
+        hasConsent = false;
+    }
+
+    function notifyConsent() {
+        document.documentElement.dataset.trackingConsent = 'granted';
+        window.fotonConsent = { hasTrackingConsent: () => true };
+        window.dispatchEvent(new CustomEvent('foton:tracking-consent-granted'));
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'cookie_consent_granted',
+            tracking_consent: 'granted'
+        });
+    }
+
+    if (hasConsent) {
+        notifyConsent();
+        return;
+    }
+
+    document.documentElement.dataset.trackingConsent = 'pending';
+    document.body.classList.add('cookie-lock');
+    window.fotonConsent = { hasTrackingConsent: () => false };
+
+    const consentLayer = document.createElement('div');
+    consentLayer.className = 'cookie-gate';
+    consentLayer.innerHTML = `
+        <div class="cookie-gate-backdrop" aria-hidden="true"></div>
+        <section class="cookie-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="cookieGateTitle" aria-describedby="cookieGateText">
+            <div class="cookie-gate-copy">
+                <span>Privacidade e cookies</span>
+                <h2 id="cookieGateTitle">Utilizamos cookies</h2>
+                <p id="cookieGateText">Usamos cookies para analisar a navega&ccedil;&atilde;o e medir o interesse em nossos ve&iacute;culos e servi&ccedil;os. Ao continuar, voc&ecirc; autoriza o uso dessas tecnologias.</p>
+            </div>
+            <button type="button" class="cookie-gate-accept">Aceitar cookies</button>
+        </section>
+    `;
+    document.body.appendChild(consentLayer);
+
+    const acceptButton = consentLayer.querySelector('.cookie-gate-accept');
+    const keepFocusOnConsent = (event) => {
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            acceptButton.focus();
+        }
+    };
+    const preventOutsideFocus = (event) => {
+        if (!consentLayer.contains(event.target)) {
+            acceptButton.focus();
+        }
+    };
+
+    document.addEventListener('keydown', keepFocusOnConsent);
+    document.addEventListener('focusin', preventOutsideFocus);
+    acceptButton.focus();
+    acceptButton.addEventListener('click', () => {
+        try {
+            localStorage.setItem(storageKey, 'true');
+        } catch (error) {
+            // O aceite ainda permanece valido durante esta navegacao.
+        }
+
+        document.removeEventListener('keydown', keepFocusOnConsent);
+        document.removeEventListener('focusin', preventOutsideFocus);
+        document.body.classList.remove('cookie-lock');
+        consentLayer.classList.add('is-closing');
+        setTimeout(() => consentLayer.remove(), 260);
+        notifyConsent();
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieConsent, { once: true });
+} else {
+    initCookieConsent();
 }
 

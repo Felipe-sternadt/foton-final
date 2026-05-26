@@ -3190,6 +3190,28 @@ textarea {
     padding-top: 28px;
 }
 
+.premium-carousel .model-card-auman-heavy .card-img img {
+    width: 82% !important;
+    height: 82% !important;
+}
+
+.premium-carousel .model-card-auman-extra .card-img img {
+    width: 78% !important;
+    height: 78% !important;
+}
+
+@media (max-width: 768px) {
+    .premium-carousel .model-card-auman-heavy .card-img img {
+        width: 82% !important;
+        height: 82% !important;
+    }
+
+    .premium-carousel .model-card-auman-extra .card-img img {
+        width: 78% !important;
+        height: 78% !important;
+    }
+}
+
 .main-title {
     font-size: clamp(2.75rem, 5.4vw, 4.35rem);
     line-height: 1.12;
@@ -6252,6 +6274,144 @@ body.vehicle-page .specs-content .spec-unit {
     color: #000000 !important;
 }
 
+/* Consentimento obrigatorio de cookies */
+body.cookie-lock {
+    overflow: hidden !important;
+}
+
+.cookie-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 10050;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: clamp(14px, 2vw, 22px);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: opacity 0.26s ease;
+}
+
+.cookie-gate.is-closing {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-gate-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 13, 35, 0.52);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.cookie-gate-dialog {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(26px, 5vw, 52px);
+    width: min(1180px, 100%);
+    padding: clamp(20px, 2.5vw, 26px) clamp(22px, 3vw, 34px);
+    text-align: left;
+    background: rgba(255, 255, 255, 0.985);
+    border: 1px solid rgba(0, 45, 114, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 28px 78px rgba(0, 15, 45, 0.32);
+    animation: cookieDialogEnter 0.38s var(--bezier) both;
+}
+
+@keyframes cookieDialogEnter {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cookie-gate-copy {
+    max-width: 760px;
+}
+
+.cookie-gate-copy > span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--azul-destaque);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cookie-gate-dialog h2 {
+    margin: 0;
+    color: #061638;
+    font-size: clamp(1.2rem, 2vw, 1.45rem);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.cookie-gate-dialog p {
+    margin: 7px 0 0;
+    color: #4a576d;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.cookie-gate-accept {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 194px;
+    min-height: 54px;
+    padding: 0 26px;
+    border: 1px solid var(--azul-foton);
+    border-radius: 999px;
+    background: var(--azul-foton);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.26s var(--bezier), background 0.26s ease, box-shadow 0.26s ease;
+}
+
+.cookie-gate-accept:hover {
+    transform: translateY(-2px);
+    background: var(--azul-destaque);
+    box-shadow: 0 16px 30px rgba(0, 94, 255, 0.22);
+}
+
+.cookie-gate-accept:focus-visible {
+    outline: 3px solid rgba(0, 94, 255, 0.26);
+    outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+    .cookie-gate {
+        padding: 10px;
+    }
+
+    .cookie-gate-dialog {
+        display: block;
+        padding: 20px 16px 14px;
+    }
+
+    .cookie-gate-dialog p {
+        margin-bottom: 16px;
+        font-size: 0.88rem;
+    }
+
+    .cookie-gate-accept {
+        width: 100%;
+    }
+}
+
 
 .cummins-section {
     padding: clamp(84px, 9vw, 132px) 24px !important;
@@ -6775,6 +6935,7 @@ body.vehicle-page .specs-content .spec-unit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     min-height: 54px;
     margin-top: 30px;
     padding: 0 34px;
@@ -6793,6 +6954,7 @@ body.vehicle-page .specs-content .spec-unit {
 }
 
 .btn-service-review:hover {
+    text-decoration: none;
     transform: translateY(-2px);
     background: var(--azul-destaque);
     box-shadow: 0 24px 46px rgba(0, 94, 255, 0.22);
@@ -6842,8 +7004,16 @@ body.vehicle-page .specs-content .spec-unit {
     }
 
     .services-page .services-form-wrapper .contato-form {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         row-gap: 14px;
+    }
+
+    .services-page .services-form-wrapper .mobile-pair-field {
+        grid-column: auto;
+    }
+
+    .services-page .services-form-wrapper .fixed-department-field {
+        display: none;
     }
 
     .services-page .contato-form .form-row {
@@ -7212,6 +7382,22 @@ body.vehicle-page .specs-content .spec-unit {
     margin: clamp(-76px, -5vw, -54px) auto clamp(14px, 1.8vw, 24px) !important;
     display: block !important;
     object-fit: contain !important;
+}
+
+.porsche-card-auman-1722 img {
+    width: min(112%, 500px) !important;
+    height: clamp(232px, 20vw, 318px) !important;
+}
+
+.showroom-grid .porsche-card-auman-heavy img {
+    width: min(86%, 380px) !important;
+    height: clamp(190px, 16vw, 248px) !important;
+    margin-top: clamp(-56px, -4vw, -38px) !important;
+}
+
+.showroom-grid .porsche-card-auman-2632 img {
+    width: min(82%, 365px) !important;
+    height: clamp(184px, 15.5vw, 238px) !important;
 }
 
 .porsche-card h2 {
@@ -8279,4 +8465,3 @@ body.vehicle-page .specs-content .spec-unit {
         max-height: 205px !important;
     }
 }
-
