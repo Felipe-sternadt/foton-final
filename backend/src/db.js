@@ -13,7 +13,9 @@ export const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   namedPlaceholders: true,
-  charset: 'utf8mb4'
+  // Mantem a collation da conexao igual a das tabelas. Sem isso, algumas
+  // versoes do MySQL recusam comparacoes entre parametros e colunas UUID.
+  charset: 'utf8mb4_unicode_ci'
 });
 
 export async function pingDatabase() {
