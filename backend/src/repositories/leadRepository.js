@@ -86,13 +86,16 @@ export async function updateLeadEmailStatus(publicId, emailResult) {
          email_recipient = COALESCE(email_recipient, :emailRecipient),
          email_provider_id = COALESCE(email_provider_id, :emailProviderId),
          email_sent_at = CASE
-           WHEN :emailStatus = 'sent' THEN COALESCE(email_sent_at, NOW())
+           WHEN :emailSent = 1 THEN COALESCE(email_sent_at, NOW())
            ELSE email_sent_at
          END
      WHERE public_id = :publicId`,
     {
       publicId,
       emailStatus: emailResult.status,
+      // Evita comparar um parametro textual (collation da conexao) com um
+      // literal SQL (collation do banco) em servidores MySQL mais estritos.
+      emailSent: emailResult.status === 'sent' ? 1 : 0,
       emailRecipient: emailResult.recipient,
       emailProviderId: emailResult.response?.providerId || null,
       emailResponse: JSON.stringify(emailResult.response || {})
@@ -105,11 +108,12 @@ export async function updateLeadCrmStatus(publicId, crmResult) {
     `UPDATE leads
      SET crm_status = :crmStatus,
          crm_response = :crmResponse,
-         crm_sent_at = CASE WHEN :crmStatus = 'sent' THEN NOW() ELSE crm_sent_at END
+         crm_sent_at = CASE WHEN :crmSent = 1 THEN NOW() ELSE crm_sent_at END
      WHERE public_id = :publicId`,
     {
       publicId,
       crmStatus: crmResult.status,
+      crmSent: crmResult.status === 'sent' ? 1 : 0,
       crmResponse: JSON.stringify(crmResult.response)
     }
   );
