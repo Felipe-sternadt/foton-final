@@ -77,28 +77,28 @@
                 </div>
 
                 <div class="contato-form-wrapper services-form-wrapper" id="pecasForm">
-                    <form class="contato-form">
+                    <form class="contato-form" data-lead-form="parts">
                         <h3 class="form-title">Solicitar agora</h3>
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Nome *</label>
-                                <input type="text" placeholder="Seu nome completo" required>
+                                <label for="partsName">Nome *</label>
+                                <input id="partsName" name="name" type="text" autocomplete="name" placeholder="Seu nome completo" required>
                             </div>
                             <div class="input-group">
-                                <label>Email *</label>
-                                <input type="email" placeholder="Seu email" required>
+                                <label for="partsEmail">Email *</label>
+                                <input id="partsEmail" name="email" type="email" autocomplete="email" placeholder="Seu email" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Telefone *</label>
-                                <input type="tel" placeholder="(00) 00000-0000" required>
+                                <label for="partsPhone">Telefone *</label>
+                                <input id="partsPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required>
                             </div>
                             <div class="input-group">
-                                <label>Unidade *</label>
-                                <select required>
+                                <label for="partsUnit">Unidade *</label>
+                                <select id="partsUnit" name="dealershipUnit" required>
                                     <option value="" disabled selected>Selecione a unidade</option>
                                     <option value="Palhoca SC">Palho&ccedil;a SC</option>
                                     <option value="Joinville SC">Joinville SC</option>
@@ -109,29 +109,29 @@
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Estado *</label>
-                                <select id="estadoSelect" required>
+                                <label for="estadoSelect">Estado *</label>
+                                <select id="estadoSelect" name="state" autocomplete="address-level1" required>
                                     <option value="" disabled selected>Carregando estados...</option>
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label>Cidade *</label>
-                                <select id="cidadeSelect" required disabled>
+                                <label for="cidadeSelect">Cidade *</label>
+                                <select id="cidadeSelect" name="city" autocomplete="address-level2" required disabled>
                                     <option value="" disabled selected>Selecione o estado primeiro</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="input-group full-width fixed-department-field">
-                            <label>Departamento *</label>
-                            <select required>
+                            <label for="partsDepartment">Departamento *</label>
+                            <select id="partsDepartment" name="department" required>
                                 <option value="Pecas e acessorios" selected>Pe&ccedil;as e acess&oacute;rios</option>
                             </select>
                         </div>
 
                         <div class="input-group full-width">
-                            <label>Mensagem *</label>
-                            <textarea placeholder="Descreva a pe&ccedil;a, acess&oacute;rio ou atendimento que voc&ecirc; precisa..." rows="4" required></textarea>
+                            <label for="partsMessage">Mensagem *</label>
+                            <textarea id="partsMessage" name="message" placeholder="Descreva a pe&ccedil;a, acess&oacute;rio ou atendimento que voc&ecirc; precisa..." rows="4" required></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">SOLICITAR AGORA</button>
@@ -200,6 +200,7 @@
         </div>
     </footer>
 
+    <script src="../assets/js/analytics.js" defer></script>
     <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

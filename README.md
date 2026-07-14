@@ -1,11 +1,14 @@
 # Someval Foton
 
-Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaScript vanilla. O projeto esta preparado para publicacao direta no GitHub Pages, com a home na raiz, paginas institucionais em `pages/`, paginas de modelos em `models/` e arquivos de suporte em `assets/`.
+Aplicacao web da Someval Foton com frontend em HTML, CSS e JavaScript e backend Node.js/Express. O mesmo processo serve o site, recebe os formularios, persiste leads no MySQL e envia notificacoes pela API do Resend.
 
 ## Estrutura
 
 ```text
 .
++-- package.json
++-- package-lock.json
++-- .env.example
 +-- index.html
 +-- pages/
 |   +-- novos.html
@@ -26,6 +29,15 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 |   +-- eview-grand.html
 |   +-- eview-connect.html
 |   +-- eaumark.html
++-- backend/
+|   +-- src/
+|   |   +-- server.js
+|   |   +-- routes/
+|   |   +-- services/
+|   |   +-- repositories/
+|   |   +-- validators/
+|   +-- sql/
+|   +-- test/
 +-- assets/
     +-- css/
     |   +-- style.css
@@ -87,15 +99,42 @@ Site institucional estatico da Someval Foton, desenvolvido em HTML, CSS e JavaSc
 
 ## Como Rodar Localmente
 
-Por ser um site estatico, basta abrir `index.html` no navegador. Para simular melhor o GitHub Pages, use um servidor local:
+1. Instale as dependencias na raiz:
 
 ```bash
-npx serve .
+npm install
 ```
 
-## Publicacao
+2. Copie `.env.example` para `.env` e informe somente credenciais locais.
 
-O projeto esta preparado para GitHub Pages usando a branch `main`, com `index.html` na raiz.
+3. Inicie a aplicacao completa:
+
+```bash
+npm start
+```
+
+4. Acesse `http://localhost:3000`.
+
+O arquivo `.env` real e ignorado pelo Git. Nunca use `git add -f .env` e nunca coloque chaves em HTML ou JavaScript do navegador.
+
+## Testes
+
+```bash
+npm test
+```
+
+## Publicacao na Hostinger
+
+O projeto esta preparado para uma **Aplicacao Web Node.js** nos planos Business ou Cloud da Hostinger:
+
+- Framework: Express.js
+- Versao do Node.js: 22.x ou 24.x
+- Arquivo de entrada: `backend/src/server.js`
+- Comando de inicio: `npm start`
+- Build: nao necessario
+- Variaveis secretas: adicionar no hPanel, nunca no GitHub
+
+Consulte `HOSTINGER_DEPLOY.md` para o checklist completo.
 
 Repositorio:
 
@@ -109,6 +148,7 @@ Ao criar uma nova pagina, use os arquivos globais assim:
 
 ```html
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/analytics.js" defer></script>
 <script src="assets/js/script.js" defer></script>
 ```
 
@@ -116,6 +156,7 @@ Em paginas dentro de `pages/` ou `models/`, use:
 
 ```html
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/analytics.js" defer></script>
 <script src="../assets/js/script.js" defer></script>
 ```
 

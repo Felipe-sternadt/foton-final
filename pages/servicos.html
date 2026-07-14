@@ -77,28 +77,28 @@
                 </div>
 
                 <div class="contato-form-wrapper services-form-wrapper" id="servicosForm">
-                    <form class="contato-form">
+                    <form class="contato-form" data-lead-form="service">
                         <h3 class="form-title">Solicitar atendimento</h3>
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Nome *</label>
-                                <input type="text" placeholder="Seu nome completo" required>
+                                <label for="serviceName">Nome *</label>
+                                <input id="serviceName" name="name" type="text" autocomplete="name" placeholder="Seu nome completo" required>
                             </div>
                             <div class="input-group">
-                                <label>Email *</label>
-                                <input type="email" placeholder="Seu email" required>
+                                <label for="serviceEmail">Email *</label>
+                                <input id="serviceEmail" name="email" type="email" autocomplete="email" placeholder="Seu email" required>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Telefone *</label>
-                                <input type="tel" placeholder="(00) 00000-0000" required>
+                                <label for="servicePhone">Telefone *</label>
+                                <input id="servicePhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required>
                             </div>
                             <div class="input-group">
-                                <label>Unidade *</label>
-                                <select required>
+                                <label for="serviceUnit">Unidade *</label>
+                                <select id="serviceUnit" name="dealershipUnit" required>
                                     <option value="" disabled selected>Selecione a unidade</option>
                                     <option value="Palhoça SC">Palhoça SC</option>
                                     <option value="Joinville SC">Joinville SC</option>
@@ -109,14 +109,14 @@
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Estado *</label>
-                                <select id="estadoSelect" required>
+                                <label for="estadoSelect">Estado *</label>
+                                <select id="estadoSelect" name="state" autocomplete="address-level1" required>
                                     <option value="" disabled selected>Carregando estados...</option>
                                 </select>
                             </div>
                             <div class="input-group">
-                                <label>Cidade *</label>
-                                <select id="cidadeSelect" required disabled>
+                                <label for="cidadeSelect">Cidade *</label>
+                                <select id="cidadeSelect" name="city" autocomplete="address-level2" required disabled>
                                     <option value="" disabled selected>Selecione o estado primeiro</option>
                                 </select>
                             </div>
@@ -124,8 +124,8 @@
 
                         <div class="form-row">
                             <div class="input-group">
-                                <label>Modelo *</label>
-                                <select id="modeloSelect" required>
+                                <label for="modeloSelect">Modelo *</label>
+                                <select id="modeloSelect" name="model" required>
                                     <option value="" disabled selected>Selecione o modelo</option>
                                 <option value="Aumark S 315 MT">Aumark S 315 MT</option>
                                 <option value="Aumark S 315 AMT">Aumark S 315 AMT</option>
@@ -153,16 +153,16 @@
                                 </select>
                             </div>
                             <div class="input-group fixed-department-field">
-                                <label>Departamento *</label>
-                                <select required>
+                                <label for="serviceDepartment">Departamento *</label>
+                                <select id="serviceDepartment" name="department" required>
                                     <option value="Serviços" selected>Serviços</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="input-group full-width mobile-pair-field">
-                            <label>Serviço *</label>
-                            <select id="servicoSelect" required>
+                            <label for="servicoSelect">Serviço *</label>
+                            <select id="servicoSelect" name="serviceType" required>
                                 <option value="" disabled selected>Selecione o serviço</option>
                                 <option value="Revisão">Revisão</option>
                                 <option value="Manutenção preventiva">Manutenção preventiva</option>
@@ -174,8 +174,8 @@
                         </div>
 
                         <div class="input-group full-width">
-                            <label>Mensagem *</label>
-                            <textarea placeholder="Especifique o que você precisa..." rows="4" required></textarea>
+                            <label for="serviceMessage">Mensagem *</label>
+                            <textarea id="serviceMessage" name="message" placeholder="Especifique o que você precisa..." rows="4" required></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">AGENDAR SERVIÇO</button>
@@ -246,6 +246,7 @@
         </div>
     </footer>
 
+    <script src="../assets/js/analytics.js" defer></script>
     <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

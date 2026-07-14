@@ -62,9 +62,10 @@
             <h3 id="tdCarName" class="td-car-name">Aumark S 315</h3>
 
             <div class="td-left-selector">
-                <label>Selecione o Modelo</label>
-                <select id="tdModeloSelect" required>
-                    <option value="Aumark S 315 MT" selected>Aumark S 315 MT</option>
+                <label for="tdModeloSelect">Selecione o Modelo</label>
+                <select id="tdModeloSelect" name="model" required>
+                    <option value="" disabled selected>Selecione o modelo</option>
+                    <option value="Aumark S 315 MT">Aumark S 315 MT</option>
                     <option value="Aumark S 315 AMT">Aumark S 315 AMT</option>
                     <option value="Aumark S 715">Aumark S 715</option>
                     <option value="Aumark S 916">Aumark S 916</option>
@@ -92,26 +93,26 @@
         </div>
 
         <div class="td-form-area">
-            <form class="td-form">
+            <form class="td-form" data-lead-form="test_drive">
                 
                 <div class="td-form-section">
                     <h4>Dados Pessoais</h4>
                     <div class="input-group">
-                        <label>CPF/CNPJ *</label>
-                        <input type="text" placeholder="CPF ou CNPJ" required>
+                        <label for="testDriveDocument">CPF/CNPJ *</label>
+                        <input id="testDriveDocument" name="document" type="text" inputmode="numeric" autocomplete="off" placeholder="CPF ou CNPJ" required>
                     </div>
                     <div class="input-group">
-                        <label>Nome Completo *</label>
-                        <input type="text" placeholder="Digite seu nome" required>
+                        <label for="testDriveName">Nome Completo *</label>
+                        <input id="testDriveName" name="name" type="text" autocomplete="name" placeholder="Digite seu nome" required>
                     </div>
                     <div class="form-row">
                         <div class="input-group">
-                            <label>E-mail *</label>
-                            <input type="email" placeholder="Insira seu e-mail" required>
+                            <label for="testDriveEmail">E-mail *</label>
+                            <input id="testDriveEmail" name="email" type="email" autocomplete="email" placeholder="Insira seu e-mail" required>
                         </div>
                         <div class="input-group">
-                            <label>Celular *</label>
-                            <input type="tel" placeholder="(00) 00000-0000" required>
+                            <label for="testDrivePhone">Celular *</label>
+                            <input id="testDrivePhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required>
                         </div>
                     </div>
                 </div>
@@ -119,12 +120,12 @@
     <h4>Agendamento</h4>
     <div class="form-row">
         <div class="input-group">
-            <label>Data Preferencial *</label>
-            <input type="date" id="dataAgendamento" required>
+            <label for="dataAgendamento">Data Preferencial *</label>
+            <input type="date" id="dataAgendamento" name="preferredDate" required>
         </div>
         <div class="input-group">
-            <label>Horário *</label>
-            <select id="horarioAgendamento" required>
+            <label for="horarioAgendamento">Horário *</label>
+            <select id="horarioAgendamento" name="preferredTime" required>
                 <option value="" disabled selected>Selecionar...</option>
                 <option value="08:30">08:30</option>
                 <option value="10:00">10:00</option>
@@ -140,21 +141,21 @@
                     <h4>Localize uma concessionária</h4>
                     <div class="form-row">
                         <div class="input-group">
-                            <label>Estado *</label>
-                            <select id="estadoSelect" required>
+                            <label for="estadoSelect">Estado *</label>
+                            <select id="estadoSelect" name="state" autocomplete="address-level1" required>
                                 <option value="" disabled selected>Selecionar...</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label>Cidade *</label>
-                            <select id="cidadeSelect" required disabled>
+                            <label for="cidadeSelect">Cidade *</label>
+                            <select id="cidadeSelect" name="city" autocomplete="address-level2" required disabled>
                                 <option value="" disabled selected>Selecionar...</option>
                             </select>
                         </div>
                     </div>
                     <div class="input-group">
-                        <label>Unidade de Preferência *</label>
-                        <select required>
+                        <label for="testDriveUnit">Unidade de Preferência *</label>
+                        <select id="testDriveUnit" name="dealershipUnit" required>
                             <option value="" disabled selected>Selecione a unidade</option>
                             <option value="Palhoça SC">Palhoça SC</option>
                             <option value="Joinville SC">Joinville SC</option>
@@ -211,6 +212,7 @@
             <p class="watermark">Desenvolvido por <a class="dev-name" href="https://www.instagram.com/dwh.agency/" target="_blank" rel="noopener">DWH AGENCY</a></p>
         </div>
     </footer>
+    <script src="../assets/js/analytics.js" defer></script>
     <script src="../assets/js/script.js" defer></script>
 </body>
 </html>

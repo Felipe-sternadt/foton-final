@@ -1,0 +1,34 @@
+{
+  "name": "someval-foton-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site institucional e API de leads da Someval Foton",
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js",
+    "test": "node --test backend/test/*.test.js",
+    "check": "node --check backend/src/server.js && node --test backend/test/*.test.js",
+    "db:check": "node backend/scripts/db-check.js",
+    "db:migrate": "node backend/scripts/migrate.js",
+    "db:smoke": "node backend/scripts/smoke-lead-db.js",
+    "db:leads": "node backend/scripts/list-leads.js",
+    "audit:browser": "node backend/scripts/browser-audit.js",
+    "audit:flow": "node backend/scripts/flow-audit.js",
+    "audit:http": "node backend/scripts/http-audit.js",
+    "audit:critical": "npm run check && npm run db:check && npm run audit:http && npm run audit:flow && npm run audit:browser",
+    "test:lead": "node backend/scripts/send-test-lead.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mysql2": "^3.12.0",
+    "zod": "^3.24.1"
+  }
+}
